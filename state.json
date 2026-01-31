@@ -1,25 +1,44 @@
 {
-  "lastUpdate": "2026-01-31T22:30:18.067Z",
-  "version": "1.1",
-  "status": "running",
+  "lastUpdate": "2026-01-31T22:31:00.000Z",
+  "version": "1.2",
+  "status": "research",
   "wallet": {
     "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
     "balanceSol": 7.938215032,
     "balanceUsd": 802
   },
+  "drift": {
+    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+    "collateral": 189.79,
+    "equity": 189.79,
+    "leverage": 0,
+    "position": null,
+    "status": "PAUSED - Researching new strategy"
+  },
   "stats": {
-    "cyclesTotal": 140,
-    "tradesExecuted": 3,
+    "cyclesTotal": 85,
+    "tradesExecuted": 1,
     "tradesSuccessful": 0,
+    "tradesClosed": 1,
     "totalPnlSol": 0,
-    "totalPnlUsd": 0
+    "totalPnlUsd": -0.07
+  },
+  "backtestResults": {
+    "strategy": "EMA Trend (v1.0)",
+    "result": "NOT PROFITABLE",
+    "bestAsset": "BTC",
+    "bestParams": "EMA 20/50, SL 3%, TP 4%",
+    "btcPnl": "+$14",
+    "solPnl": "-$238",
+    "ethPnl": "-$156"
   },
   "config": {
     "minProfitBps": 10,
     "tradeSizeSol": 0.5,
     "maxSlippageBps": 50,
     "scanIntervalMs": 20000,
-    "rpc": "helius"
+    "rpc": "helius",
+    "perpTrading": "PAUSED"
   },
   "strategies": {
     "dexArbitrage": {
@@ -40,88 +59,58 @@
     },
     "fundingRateArb": {
       "enabled": true,
-      "status": "active"
+      "status": "researching"
+    },
+    "driftPerps": {
+      "enabled": false,
+      "status": "PAUSED",
+      "reason": "Backtest showed negative expectancy - researching new approach"
     }
   },
   "fundingRates": [
     {
       "market": "BTC-PERP",
-      "rate": 0.427128833,
+      "rate": 0.427,
       "direction": "longs_pay",
-      "daily": 10.251091992
+      "annualized": "37.4%"
     },
     {
       "market": "ETH-PERP",
-      "rate": -0.0159725,
+      "rate": -0.016,
       "direction": "shorts_pay",
-      "daily": 0.38334
-    },
-    {
-      "market": "MARKET-73",
-      "rate": 0.015488333,
-      "direction": "longs_pay",
-      "daily": 0.371719992
-    },
-    {
-      "market": "MARKET-79",
-      "rate": 0.01331675,
-      "direction": "longs_pay",
-      "daily": 0.319602
-    },
-    {
-      "market": "BNB-PERP",
-      "rate": 0.010107875,
-      "direction": "longs_pay",
-      "daily": 0.242589
-    }
-  ],
-  "arbSpreads": [
-    {
-      "token": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
-      "spreadBps": 80,
-      "profitSol": 0.007991291
+      "annualized": "1.4%"
     }
   ],
   "activityLog": [
     {
-      "time": "2:30 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
+      "time": "3:30 PM",
+      "type": "research",
+      "message": "Perp trading PAUSED - researching new strategies"
     },
     {
-      "time": "2:17 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
+      "time": "3:27 PM",
+      "type": "warning",
+      "message": "Backtest complete: EMA strategy NOT profitable"
     },
     {
-      "time": "2:11 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 20s"
+      "time": "3:25 PM",
+      "type": "info",
+      "message": "Trade #1 closed @ $103.55 (flat, -$0.07)"
+    },
+    {
+      "time": "3:21 PM",
+      "type": "upgrade",
+      "message": "v1.2 deployed - On-chain SL/TP orders"
+    },
+    {
+      "time": "3:06 PM",
+      "type": "trade",
+      "message": "OPENED: SOL-PERP SHORT $50 @ $103.60 (2x)"
     },
     {
       "time": "2:06 PM",
       "type": "info",
       "message": "Drift SDK initialized - Found 85 perp markets"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Found 5 funding rate opportunities"
-    },
-    {
-      "time": "2:04 PM",
-      "type": "warning",
-      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
-    },
-    {
-      "time": "2:02 PM",
-      "type": "info",
-      "message": "Helius RPC configured - No more rate limits"
-    },
-    {
-      "time": "1:51 PM",
-      "type": "success",
-      "message": "DefiV1.1 deployed with SDKs"
     },
     {
       "time": "1:38 PM",
