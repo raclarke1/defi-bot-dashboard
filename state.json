@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-01-31T21:11:25.531Z",
+  "lastUpdate": "2026-01-31T21:16:03.643Z",
   "version": "1.1",
   "status": "running",
   "wallet": {
     "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
-    "balanceSol": 9.938,
-    "balanceUsd": 1012
+    "balanceSol": 9.938210032,
+    "balanceUsd": 1004
   },
   "stats": {
-    "cyclesTotal": 0,
+    "cyclesTotal": 10,
     "tradesExecuted": 0,
     "tradesSuccessful": 0,
     "totalPnlSol": 0,
@@ -46,21 +46,33 @@
   "fundingRates": [
     {
       "market": "BTC-PERP",
-      "rate": 0.4271,
+      "rate": 0.427128833,
       "direction": "longs_pay",
-      "daily": 10.25
+      "daily": 10.251091992
     },
     {
       "market": "ETH-PERP",
-      "rate": -0.016,
+      "rate": -0.0159725,
       "direction": "shorts_pay",
-      "daily": -0.38
+      "daily": 0.38334
+    },
+    {
+      "market": "MARKET-73",
+      "rate": 0.015488333,
+      "direction": "longs_pay",
+      "daily": 0.371719992
+    },
+    {
+      "market": "MARKET-79",
+      "rate": 0.01331675,
+      "direction": "longs_pay",
+      "daily": 0.319602
     },
     {
       "market": "BNB-PERP",
-      "rate": 0.0101,
+      "rate": 0.010107875,
       "direction": "longs_pay",
-      "daily": 0.24
+      "daily": 0.242589
     }
   ],
   "arbSpreads": [
