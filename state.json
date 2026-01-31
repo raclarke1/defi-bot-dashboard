@@ -1,132 +1,49 @@
 {
-  "lastUpdate": "2026-01-31T23:38:00.091Z",
-  "version": "1.1",
-  "status": "running",
-  "wallet": {
-    "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
-    "balanceSol": 7.938215032,
-    "balanceUsd": 802
+  "lastUpdate": "2026-01-31T23:38:00.000Z",
+  "version": "2.0",
+  "status": "trading",
+  "wallets": {
+    "solana": {
+      "main": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
+      "drift": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+    },
+    "evm": "0xD2F6EeE876999d3AF71053252aAD3F2271454CF1",
+    "bitcoin": "bc1q6a8djq3s3h8tp6sy39l8v3vwlnuh6lm267nlx0"
+  },
+  "drift": {
+    "collateral": 188.57,
+    "equity": 187.36,
+    "leverage": 0.50,
+    "unrealizedPnl": -1.21,
+    "position": {
+      "asset": "BTC-PERP",
+      "direction": "SHORT",
+      "entry": 78095,
+      "current": 79071,
+      "stopLoss": 80500,
+      "takeProfit": 75000,
+      "fundingRate": "+42.9%/hr",
+      "onChainStops": true
+    }
+  },
+  "opportunities": {
+    "scanned": "2026-01-31T23:38:00Z",
+    "bestYields": [
+      {"name": "Drift BTC Funding", "apy": "42.9%/hr (temp)", "risk": "Medium"},
+      {"name": "SOL-USDC LP (Orca)", "apy": "92%", "risk": "Medium"},
+      {"name": "WSOL-USD1 LP", "apy": "148%", "risk": "Medium"},
+      {"name": "Kamino USDC Lending", "apy": "3.7%", "risk": "Low"}
+    ]
   },
   "stats": {
-    "cyclesTotal": 300,
-    "tradesExecuted": 14,
-    "tradesSuccessful": 0,
-    "totalPnlSol": 0,
-    "totalPnlUsd": 0
+    "tradesExecuted": 2,
+    "tradesClosed": 1,
+    "totalPnlUsd": -0.07
   },
-  "config": {
-    "minProfitBps": 10,
-    "tradeSizeSol": 0.5,
-    "maxSlippageBps": 50,
-    "scanIntervalMs": 20000,
-    "rpc": "helius"
-  },
-  "strategies": {
-    "dexArbitrage": {
-      "enabled": true,
-      "status": "active"
-    },
-    "triangularArb": {
-      "enabled": true,
-      "status": "active"
-    },
-    "lstArbitrage": {
-      "enabled": true,
-      "status": "active"
-    },
-    "liquidations": {
-      "enabled": true,
-      "status": "monitoring"
-    },
-    "fundingRateArb": {
-      "enabled": true,
-      "status": "active"
-    }
-  },
-  "fundingRates": [
-    {
-      "market": "BTC-PERP",
-      "rate": 0.427128833,
-      "direction": "longs_pay",
-      "daily": 10.251091992
-    },
-    {
-      "market": "ETH-PERP",
-      "rate": -0.0159725,
-      "direction": "shorts_pay",
-      "daily": 0.38334
-    },
-    {
-      "market": "MARKET-73",
-      "rate": 0.015488333,
-      "direction": "longs_pay",
-      "daily": 0.371719992
-    },
-    {
-      "market": "MARKET-79",
-      "rate": 0.01331675,
-      "direction": "longs_pay",
-      "daily": 0.319602
-    },
-    {
-      "market": "BNB-PERP",
-      "rate": 0.010107875,
-      "direction": "longs_pay",
-      "daily": 0.242589
-    }
-  ],
-  "arbSpreads": [
-    {
-      "token": "Unknown",
-      "spreadBps": 27,
-      "profitSol": 0.002678736
-    }
-  ],
   "activityLog": [
-    {
-      "time": "2:30 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
-    },
-    {
-      "time": "2:17 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
-    },
-    {
-      "time": "2:11 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 20s"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Drift SDK initialized - Found 85 perp markets"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Found 5 funding rate opportunities"
-    },
-    {
-      "time": "2:04 PM",
-      "type": "warning",
-      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
-    },
-    {
-      "time": "2:02 PM",
-      "type": "info",
-      "message": "Helius RPC configured - No more rate limits"
-    },
-    {
-      "time": "1:51 PM",
-      "type": "success",
-      "message": "DefiV1.1 deployed with SDKs"
-    },
-    {
-      "time": "1:38 PM",
-      "type": "info",
-      "message": "Wallet funded: 9.94 SOL (~$1,000)"
-    }
+    {"time": "4:38 PM", "type": "scan", "message": "Opportunity scan: Found LP yields 90-150% APY"},
+    {"time": "4:31 PM", "type": "upgrade", "message": "Added EVM + BTC wallets"},
+    {"time": "3:41 PM", "type": "trade", "message": "OPENED: BTC-PERP SHORT @ $78,095"},
+    {"time": "3:35 PM", "type": "research", "message": "Strategy v2.0: Funding rate capture"}
   ]
 }
