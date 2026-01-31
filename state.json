@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-01-31T21:16:03.643Z",
-  "version": "1.1",
+  "lastUpdate": "2026-01-31T21:21:00Z",
+  "version": "1.2",
   "status": "running",
   "wallet": {
     "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
     "balanceSol": 9.938210032,
-    "balanceUsd": 1004
+    "balanceUsd": 1014
   },
   "stats": {
-    "cyclesTotal": 10,
+    "cyclesTotal": 7,
     "tradesExecuted": 0,
     "tradesSuccessful": 0,
     "totalPnlSol": 0,
@@ -18,125 +18,43 @@
     "minProfitBps": 10,
     "tradeSizeSol": 0.5,
     "maxSlippageBps": 50,
-    "scanIntervalMs": 20000,
-    "rpc": "helius"
+    "scanIntervalMs": 15000,
+    "rpc": "helius",
+    "multiRpc": true,
+    "flashLoans": true
   },
   "strategies": {
-    "dexArbitrage": {
-      "enabled": true,
-      "status": "active"
-    },
-    "triangularArb": {
-      "enabled": true,
-      "status": "active"
-    },
-    "lstArbitrage": {
-      "enabled": true,
-      "status": "active"
-    },
-    "liquidations": {
-      "enabled": true,
-      "status": "monitoring"
-    },
-    "fundingRateArb": {
-      "enabled": true,
-      "status": "active"
-    }
+    "dexArbitrage": { "enabled": true, "status": "active" },
+    "triangularArb": { "enabled": true, "status": "active" },
+    "lstArbitrage": { "enabled": true, "status": "active" },
+    "liquidations": { "enabled": true, "status": "monitoring" },
+    "fundingRateArb": { "enabled": true, "status": "active" },
+    "flashLoanArb": { "enabled": true, "status": "ready" },
+    "multiRpcSpam": { "enabled": true, "status": "active" }
   },
   "fundingRates": [
-    {
-      "market": "BTC-PERP",
-      "rate": 0.427128833,
-      "direction": "longs_pay",
-      "daily": 10.251091992
-    },
-    {
-      "market": "ETH-PERP",
-      "rate": -0.0159725,
-      "direction": "shorts_pay",
-      "daily": 0.38334
-    },
-    {
-      "market": "MARKET-73",
-      "rate": 0.015488333,
-      "direction": "longs_pay",
-      "daily": 0.371719992
-    },
-    {
-      "market": "MARKET-79",
-      "rate": 0.01331675,
-      "direction": "longs_pay",
-      "daily": 0.319602
-    },
-    {
-      "market": "BNB-PERP",
-      "rate": 0.010107875,
-      "direction": "longs_pay",
-      "daily": 0.242589
-    }
+    { "market": "BTC-PERP", "rate": 0.4271, "direction": "longs_pay", "daily": 10.25 },
+    { "market": "ETH-PERP", "rate": -0.016, "direction": "shorts_pay", "daily": -0.38 },
+    { "market": "MARKET-73", "rate": 0.0155, "direction": "longs_pay", "daily": 0.37 },
+    { "market": "MARKET-79", "rate": 0.0133, "direction": "longs_pay", "daily": 0.32 },
+    { "market": "BNB-PERP", "rate": 0.0101, "direction": "longs_pay", "daily": 0.24 }
   ],
   "arbSpreads": [
-    {
-      "token": "USDC",
-      "spreadBps": -40,
-      "profitSol": -0.002
-    },
-    {
-      "token": "JITOSOL",
-      "spreadBps": -41,
-      "profitSol": -0.002
-    },
-    {
-      "token": "RAY",
-      "spreadBps": -50,
-      "profitSol": -0.003
-    },
-    {
-      "token": "JUP",
-      "spreadBps": -50,
-      "profitSol": -0.003
-    },
-    {
-      "token": "BONK",
-      "spreadBps": -50,
-      "profitSol": -0.003
-    }
+    { "token": "USDC", "spreadBps": -40, "profitSol": -0.002 },
+    { "token": "JITOSOL", "spreadBps": -41, "profitSol": -0.002 },
+    { "token": "RAY", "spreadBps": -50, "profitSol": -0.003 },
+    { "token": "JUP", "spreadBps": -50, "profitSol": -0.003 },
+    { "token": "BONK", "spreadBps": -50, "profitSol": -0.003 }
   ],
   "activityLog": [
-    {
-      "time": "2:11 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 20s"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Drift SDK initialized - Found 85 perp markets"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Found 5 funding rate opportunities"
-    },
-    {
-      "time": "2:04 PM",
-      "type": "warning",
-      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
-    },
-    {
-      "time": "2:02 PM",
-      "type": "info",
-      "message": "Helius RPC configured - No more rate limits"
-    },
-    {
-      "time": "1:51 PM",
-      "type": "success",
-      "message": "DefiV1.1 deployed with SDKs"
-    },
-    {
-      "time": "1:38 PM",
-      "type": "info",
-      "message": "Wallet funded: 9.94 SOL (~$1,000)"
-    }
+    { "time": "2:21 PM", "type": "success", "message": "v1.2 deployed: Flash loans + Multi-RPC spam + More DEXes" },
+    { "time": "2:17 PM", "type": "info", "message": "Research complete: Analyzed 4 major repos for HFT strategies" },
+    { "time": "2:17 PM", "type": "success", "message": "Bot restarted - Scan interval: 15s" },
+    { "time": "2:11 PM", "type": "success", "message": "Dashboard deployed: raclarke1.github.io/defi-bot-dashboard" },
+    { "time": "2:06 PM", "type": "info", "message": "Drift SDK initialized - Found 85 perp markets" },
+    { "time": "2:04 PM", "type": "warning", "message": "Transient arb: USDC +7 bps, RAY +13 bps (below threshold)" },
+    { "time": "2:02 PM", "type": "success", "message": "Helius RPC configured - No more rate limits" },
+    { "time": "1:51 PM", "type": "success", "message": "DefiV1.1 deployed with Kamino, Marginfi, Drift SDKs" },
+    { "time": "1:38 PM", "type": "info", "message": "Wallet funded: 9.94 SOL (~$1,000)" }
   ]
 }
