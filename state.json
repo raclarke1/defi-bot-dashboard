@@ -1,61 +1,137 @@
 {
-  "lastUpdate": "2026-01-31T23:31:00.000Z",
-  "version": "2.0",
-  "status": "trading",
-  "wallets": {
-    "solana": {
-      "main": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
-      "drift": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
-    },
-    "evm": "0xD2F6EeE876999d3AF71053252aAD3F2271454CF1",
-    "bitcoin": "bc1q6a8djq3s3h8tp6sy39l8v3vwlnuh6lm267nlx0"
-  },
-  "drift": {
-    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "collateral": 189.53,
-    "equity": 189.27,
-    "leverage": 0.49,
-    "position": {
-      "asset": "BTC-PERP",
-      "direction": "SHORT",
-      "size": 0.0012,
-      "notional": 94,
-      "entry": 78095,
-      "stopLoss": 80500,
-      "takeProfit": 75000,
-      "fundingRate": "+45.4%/hr",
-      "onChainStops": true
-    }
+  "lastUpdate": "2026-01-31T23:35:22.845Z",
+  "version": "1.1",
+  "status": "running",
+  "wallet": {
+    "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
+    "balanceSol": 7.938215032,
+    "balanceUsd": 802
   },
   "stats": {
-    "tradesExecuted": 2,
-    "tradesClosed": 1,
-    "totalPnlUsd": -0.07
+    "cyclesTotal": 240,
+    "tradesExecuted": 14,
+    "tradesSuccessful": 0,
+    "totalPnlSol": 0,
+    "totalPnlUsd": 0
   },
-  "tradeHistory": [
+  "config": {
+    "minProfitBps": 10,
+    "tradeSizeSol": 0.5,
+    "maxSlippageBps": 50,
+    "scanIntervalMs": 20000,
+    "rpc": "helius"
+  },
+  "strategies": {
+    "dexArbitrage": {
+      "enabled": true,
+      "status": "active"
+    },
+    "triangularArb": {
+      "enabled": true,
+      "status": "active"
+    },
+    "lstArbitrage": {
+      "enabled": true,
+      "status": "active"
+    },
+    "liquidations": {
+      "enabled": true,
+      "status": "monitoring"
+    },
+    "fundingRateArb": {
+      "enabled": true,
+      "status": "active"
+    }
+  },
+  "fundingRates": [
     {
-      "id": 1,
-      "asset": "SOL-PERP",
-      "direction": "SHORT",
-      "entry": 103.60,
-      "exit": 103.55,
-      "pnl": -0.07,
-      "result": "FLAT"
+      "market": "BTC-PERP",
+      "rate": 0.427128833,
+      "direction": "longs_pay",
+      "daily": 10.251091992
+    },
+    {
+      "market": "ETH-PERP",
+      "rate": -0.0159725,
+      "direction": "shorts_pay",
+      "daily": 0.38334
+    },
+    {
+      "market": "MARKET-73",
+      "rate": 0.015488333,
+      "direction": "longs_pay",
+      "daily": 0.371719992
+    },
+    {
+      "market": "MARKET-79",
+      "rate": 0.01331675,
+      "direction": "longs_pay",
+      "daily": 0.319602
+    },
+    {
+      "market": "BNB-PERP",
+      "rate": 0.010107875,
+      "direction": "longs_pay",
+      "daily": 0.242589
     }
   ],
-  "activeOrders": [
-    {"type": "STOP-LOSS", "asset": "BTC-PERP", "trigger": 80500, "status": "ON-CHAIN"},
-    {"type": "TAKE-PROFIT", "asset": "BTC-PERP", "trigger": 75000, "status": "ON-CHAIN"}
+  "arbSpreads": [
+    {
+      "token": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "spreadBps": 12,
+      "profitSol": 0.001221675
+    }
   ],
-  "strategy": {
-    "name": "Funding Rate Capture",
-    "version": "2.0",
-    "approach": "Short high-funding assets"
-  },
   "activityLog": [
-    {"time": "4:31 PM", "type": "upgrade", "message": "Added EVM + BTC wallets"},
-    {"time": "3:41 PM", "type": "trade", "message": "OPENED: BTC-PERP SHORT $100 @ $78,095"},
-    {"time": "3:35 PM", "type": "research", "message": "Strategy v2.0: Funding rate capture"},
-    {"time": "3:27 PM", "type": "warning", "message": "Backtest: EMA strategy NOT profitable"}
+    {
+      "time": "2:54 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 15s"
+    },
+    {
+      "time": "2:30 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 15s"
+    },
+    {
+      "time": "2:17 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 15s"
+    },
+    {
+      "time": "2:11 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 20s"
+    },
+    {
+      "time": "2:06 PM",
+      "type": "info",
+      "message": "Drift SDK initialized - Found 85 perp markets"
+    },
+    {
+      "time": "2:06 PM",
+      "type": "info",
+      "message": "Found 5 funding rate opportunities"
+    },
+    {
+      "time": "2:04 PM",
+      "type": "warning",
+      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
+    },
+    {
+      "time": "2:02 PM",
+      "type": "info",
+      "message": "Helius RPC configured - No more rate limits"
+    },
+    {
+      "time": "1:51 PM",
+      "type": "success",
+      "message": "DefiV1.1 deployed with SDKs"
+    },
+    {
+      "time": "1:38 PM",
+      "type": "info",
+      "message": "Wallet funded: 9.94 SOL (~$1,000)"
+    }
   ]
 }
