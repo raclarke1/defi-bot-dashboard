@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-01-31T21:38:55.488Z",
+  "lastUpdate": "2026-01-31T21:43:06.557Z",
   "version": "1.1",
   "status": "running",
   "wallet": {
@@ -8,8 +8,8 @@
     "balanceUsd": 1004
   },
   "stats": {
-    "cyclesTotal": 20,
-    "tradesExecuted": 1,
+    "cyclesTotal": 30,
+    "tradesExecuted": 2,
     "tradesSuccessful": 0,
     "totalPnlSol": 0,
     "totalPnlUsd": 0
@@ -77,14 +77,9 @@
   ],
   "arbSpreads": [
     {
-      "token": "Unknown",
-      "spreadBps": 20,
-      "profitSol": 0.001968874
-    },
-    {
-      "token": "Unknown",
-      "spreadBps": 20,
-      "profitSol": 0.002004001
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "spreadBps": 6,
+      "profitSol": 0.000557722
     }
   ],
   "activityLog": [
