@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-01-31T23:22:55.095Z",
+  "lastUpdate": "2026-01-31T23:24:45.643Z",
   "version": "1.1",
   "status": "running",
   "wallet": {
@@ -8,8 +8,8 @@
     "balanceUsd": 802
   },
   "stats": {
-    "cyclesTotal": 210,
-    "tradesExecuted": 6,
+    "cyclesTotal": 270,
+    "tradesExecuted": 9,
     "tradesSuccessful": 0,
     "totalPnlSol": 0,
     "totalPnlUsd": 0
@@ -77,22 +77,42 @@
   ],
   "arbSpreads": [
     {
-      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-      "spreadBps": 11,
-      "profitSol": 0.001076015
+      "token": "Unknown",
+      "spreadBps": 59,
+      "profitSol": 0.005914158
+    },
+    {
+      "token": "Unknown",
+      "spreadBps": 46,
+      "profitSol": 0.004562789
+    },
+    {
+      "token": "Unknown",
+      "spreadBps": 43,
+      "profitSol": 0.004304604
+    },
+    {
+      "token": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+      "spreadBps": 24,
+      "profitSol": 0.002368199
     },
     {
       "token": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
-      "spreadBps": 9,
-      "profitSol": 0.000874588
+      "spreadBps": 21,
+      "profitSol": 0.00214532
+    },
+    {
+      "token": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "spreadBps": 18,
+      "profitSol": 0.001752942
+    },
+    {
+      "token": "Unknown",
+      "spreadBps": 12,
+      "profitSol": 0.001194047
     }
   ],
   "activityLog": [
-    {
-      "time": "2:54 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
-    },
     {
       "time": "2:30 PM",
       "type": "success",
