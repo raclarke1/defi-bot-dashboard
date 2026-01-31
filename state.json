@@ -1,25 +1,50 @@
 {
-  "lastUpdate": "2026-01-31T22:21:34.499Z",
-  "version": "1.1",
-  "status": "running",
+  "lastUpdate": "2026-01-31T22:27:00.000Z",
+  "version": "1.2",
+  "status": "ready",
   "wallet": {
     "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
     "balanceSol": 7.938215032,
     "balanceUsd": 802
   },
-  "stats": {
-    "cyclesTotal": 120,
-    "tradesExecuted": 3,
-    "tradesSuccessful": 0,
-    "totalPnlSol": 0,
-    "totalPnlUsd": 0
+  "drift": {
+    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+    "collateral": 189.79,
+    "equity": 189.79,
+    "leverage": 0,
+    "position": null,
+    "openOrders": []
   },
+  "stats": {
+    "cyclesTotal": 64,
+    "tradesExecuted": 1,
+    "tradesSuccessful": 0,
+    "tradesClosed": 1,
+    "totalPnlSol": 0,
+    "totalPnlUsd": -0.07
+  },
+  "tradeHistory": [
+    {
+      "id": 1,
+      "asset": "SOL-PERP",
+      "direction": "SHORT",
+      "entry": 103.60,
+      "exit": 103.55,
+      "size": 50,
+      "leverage": "2x",
+      "pnl": -0.07,
+      "result": "FLAT",
+      "reason": "Closed manually to add on-chain stops",
+      "timestamp": "2026-01-31T22:21:00.000Z"
+    }
+  ],
   "config": {
     "minProfitBps": 10,
     "tradeSizeSol": 0.5,
     "maxSlippageBps": 50,
     "scanIntervalMs": 20000,
-    "rpc": "helius"
+    "rpc": "helius",
+    "onChainStops": true
   },
   "strategies": {
     "dexArbitrage": {
@@ -41,6 +66,12 @@
     "fundingRateArb": {
       "enabled": true,
       "status": "active"
+    },
+    "driftPerps": {
+      "enabled": true,
+      "status": "ready",
+      "stance": "SKIP_LONGS",
+      "note": "Waiting for SHORT setup"
     }
   },
   "fundingRates": [
@@ -55,63 +86,34 @@
       "rate": -0.0159725,
       "direction": "shorts_pay",
       "daily": 0.38334
-    },
-    {
-      "market": "MARKET-73",
-      "rate": 0.015488333,
-      "direction": "longs_pay",
-      "daily": 0.371719992
-    },
-    {
-      "market": "MARKET-79",
-      "rate": 0.01331675,
-      "direction": "longs_pay",
-      "daily": 0.319602
-    },
-    {
-      "market": "BNB-PERP",
-      "rate": 0.010107875,
-      "direction": "longs_pay",
-      "daily": 0.242589
     }
   ],
-  "arbSpreads": [
-    {
-      "token": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
-      "spreadBps": 80,
-      "profitSol": 0.007991291
-    }
-  ],
+  "arbSpreads": [],
   "activityLog": [
     {
-      "time": "2:30 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
+      "time": "3:27 PM",
+      "type": "upgrade",
+      "message": "v1.2 deployed - On-chain SL/TP orders now supported"
     },
     {
-      "time": "2:17 PM",
-      "type": "success",
-      "message": "Bot started - Scan interval: 15s"
+      "time": "3:25 PM",
+      "type": "info",
+      "message": "Trade #1 closed @ $103.55 (flat, -$0.07)"
     },
     {
-      "time": "2:11 PM",
+      "time": "3:06 PM",
+      "type": "trade",
+      "message": "OPENED: SOL-PERP SHORT $50 @ $103.60 (2x)"
+    },
+    {
+      "time": "2:54 PM",
       "type": "success",
-      "message": "Bot started - Scan interval: 20s"
+      "message": "Bot started - Scan interval: 15s"
     },
     {
       "time": "2:06 PM",
       "type": "info",
       "message": "Drift SDK initialized - Found 85 perp markets"
-    },
-    {
-      "time": "2:06 PM",
-      "type": "info",
-      "message": "Found 5 funding rate opportunities"
-    },
-    {
-      "time": "2:04 PM",
-      "type": "warning",
-      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
     },
     {
       "time": "2:02 PM",
