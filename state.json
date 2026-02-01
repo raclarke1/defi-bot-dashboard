@@ -1,60 +1,137 @@
 {
-  "lastUpdate": "2026-02-01T03:00:00.000Z",
-  "version": "1.2",
-  "status": "trading",
-  "drift": {
-    "status": "position_open",
-    "collateral": 188.10,
-    "freeCollateral": 173.50,
-    "equity": 186.40,
-    "unrealizedPnl": -1.71,
-    "leverage": 1.55,
-    "openPositions": 1
-  },
-  "currentTrade": {
-    "id": 1,
-    "asset": "SOL-PERP",
-    "direction": "SHORT",
-    "size": 50,
-    "leverage": 2,
-    "entry": 103.60,
-    "currentPrice": 105.45,
-    "stop": 106.70,
-    "target": 100.00,
-    "openedAt": "2026-01-31T22:04:00.000Z",
-    "status": "open",
-    "duration": "~5 hours"
+  "lastUpdate": "2026-02-01T03:02:15.503Z",
+  "version": "1.1",
+  "status": "running",
+  "wallet": {
+    "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
+    "balanceSol": 7.938215032,
+    "balanceUsd": 802
   },
   "stats": {
-    "totalTrades": 1,
-    "openTrades": 1,
-    "closedTrades": 0
+    "cyclesTotal": 730,
+    "tradesExecuted": 19,
+    "tradesSuccessful": 0,
+    "totalPnlSol": 0,
+    "totalPnlUsd": 0
   },
-  "learningReview": {
-    "lastReview": "2026-02-01T03:00:00.000Z",
-    "status": "Position open - ranging",
-    "decision": "HOLD - within stop zone, target still valid"
+  "config": {
+    "minProfitBps": 10,
+    "tradeSizeSol": 0.5,
+    "maxSlippageBps": 50,
+    "scanIntervalMs": 20000,
+    "rpc": "helius"
   },
+  "strategies": {
+    "dexArbitrage": {
+      "enabled": true,
+      "status": "active"
+    },
+    "triangularArb": {
+      "enabled": true,
+      "status": "active"
+    },
+    "lstArbitrage": {
+      "enabled": true,
+      "status": "active"
+    },
+    "liquidations": {
+      "enabled": true,
+      "status": "monitoring"
+    },
+    "fundingRateArb": {
+      "enabled": true,
+      "status": "active"
+    }
+  },
+  "fundingRates": [
+    {
+      "market": "BTC-PERP",
+      "rate": 0.427128833,
+      "direction": "longs_pay",
+      "daily": 10.251091992
+    },
+    {
+      "market": "ETH-PERP",
+      "rate": -0.0159725,
+      "direction": "shorts_pay",
+      "daily": 0.38334
+    },
+    {
+      "market": "MARKET-73",
+      "rate": 0.015488333,
+      "direction": "longs_pay",
+      "daily": 0.371719992
+    },
+    {
+      "market": "MARKET-79",
+      "rate": 0.01331675,
+      "direction": "longs_pay",
+      "daily": 0.319602
+    },
+    {
+      "market": "BNB-PERP",
+      "rate": 0.010107875,
+      "direction": "longs_pay",
+      "daily": 0.242589
+    }
+  ],
+  "arbSpreads": [
+    {
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "spreadBps": 6,
+      "profitSol": 0.000640856
+    }
+  ],
   "activityLog": [
     {
-      "time": "8:00 PM",
-      "type": "review",
-      "message": "4hr review: PnL -$1.71, HOLD"
-    },
-    {
-      "time": "6:20 PM",
+      "time": "2:54 PM",
       "type": "success",
-      "message": "📈 Position profitable briefly +$0.16"
+      "message": "Bot started - Scan interval: 15s"
     },
     {
-      "time": "4:33 PM",
-      "type": "warning", 
-      "message": "⚠️ Approached stop at $106.14"
+      "time": "2:30 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 15s"
     },
     {
-      "time": "3:04 PM",
-      "type": "trade",
-      "message": "🔴 OPENED: SOL-PERP SHORT $50 @ 2x"
+      "time": "2:17 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 15s"
+    },
+    {
+      "time": "2:11 PM",
+      "type": "success",
+      "message": "Bot started - Scan interval: 20s"
+    },
+    {
+      "time": "2:06 PM",
+      "type": "info",
+      "message": "Drift SDK initialized - Found 85 perp markets"
+    },
+    {
+      "time": "2:06 PM",
+      "type": "info",
+      "message": "Found 5 funding rate opportunities"
+    },
+    {
+      "time": "2:04 PM",
+      "type": "warning",
+      "message": "Transient arb opportunity: USDC +7 bps, RAY +13 bps"
+    },
+    {
+      "time": "2:02 PM",
+      "type": "info",
+      "message": "Helius RPC configured - No more rate limits"
+    },
+    {
+      "time": "1:51 PM",
+      "type": "success",
+      "message": "DefiV1.1 deployed with SDKs"
+    },
+    {
+      "time": "1:38 PM",
+      "type": "info",
+      "message": "Wallet funded: 9.94 SOL (~$1,000)"
     }
   ]
 }
