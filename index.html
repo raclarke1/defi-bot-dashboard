@@ -93,16 +93,45 @@
                 </div>
             </div>
             
-            <!-- Orders -->
+            <!-- Trade History & Stats -->
+            <div class="grid" style="margin-bottom: 24px;">
+                <div class="card">
+                    <div class="card-title">📊 Trading Stats</div>
+                    <div id="trade-stats" style="margin-top: 12px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Total Trades:</span>
+                            <span id="total-trades">0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Win Rate:</span>
+                            <span id="win-rate">0%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Total Realized P&L:</span>
+                            <span id="total-pnl" class="positive">$0.00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Avg Win / Avg Loss:</span>
+                            <span id="avg-win-loss">$0 / $0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">🛡️ On-Chain Orders</div>
+                    <div id="orders-list"></div>
+                </div>
+            </div>
+
+            <!-- Closed Trades -->
             <div class="card" style="margin-bottom: 24px;">
-                <div class="card-title">🛡️ On-Chain Orders</div>
-                <div id="orders-list"></div>
+                <div class="card-title">📜 Trade History (Closed Positions)</div>
+                <div id="closed-trades" style="margin-top: 12px; max-height: 300px; overflow-y: auto;"></div>
             </div>
             
             <!-- Activity Log -->
             <div class="card">
                 <div class="card-title">📋 Activity Log</div>
-                <div id="activity-log" style="max-height: 300px; overflow-y: auto; margin-top: 12px;"></div>
+                <div id="activity-log" style="max-height: 200px; overflow-y: auto; margin-top: 12px;"></div>
             </div>
         </div>
         
@@ -191,6 +220,62 @@
                     `).join('');
                 } else {
                     ordersList.innerHTML = '<div style="color: var(--text-secondary); padding: 8px 0;">No open orders</div>';
+                }
+                
+                // Update closed trades and stats
+                const closedTrades = drift.closedPositions || [];
+                const closedTradesEl = document.getElementById('closed-trades');
+                
+                if (closedTrades.length > 0) {
+                    // Calculate stats
+                    const wins = closedTrades.filter(t => (t.pnl || 0) > 0);
+                    const losses = closedTrades.filter(t => (t.pnl || 0) <= 0);
+                    const totalPnl = closedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+                    const winRate = (wins.length / closedTrades.length * 100).toFixed(1);
+                    const avgWin = wins.length > 0 ? (wins.reduce((s, t) => s + t.pnl, 0) / wins.length).toFixed(2) : 0;
+                    const avgLoss = losses.length > 0 ? (losses.reduce((s, t) => s + t.pnl, 0) / losses.length).toFixed(2) : 0;
+                    
+                    // Update stats
+                    document.getElementById('total-trades').textContent = closedTrades.length;
+                    document.getElementById('win-rate').textContent = winRate + '% (' + wins.length + 'W / ' + losses.length + 'L)';
+                    const totalPnlEl = document.getElementById('total-pnl');
+                    totalPnlEl.textContent = (totalPnl >= 0 ? '+' : '') + '$' + totalPnl.toFixed(2);
+                    totalPnlEl.className = totalPnl >= 0 ? 'positive' : 'negative';
+                    document.getElementById('avg-win-loss').textContent = '+$' + avgWin + ' / $' + avgLoss;
+                    
+                    // Render closed trades table
+                    closedTradesEl.innerHTML = `
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <th style="text-align: left; padding: 6px 4px; color: var(--text-secondary);">Asset</th>
+                                    <th style="text-align: left; padding: 6px 4px; color: var(--text-secondary);">Dir</th>
+                                    <th style="text-align: right; padding: 6px 4px; color: var(--text-secondary);">Entry</th>
+                                    <th style="text-align: right; padding: 6px 4px; color: var(--text-secondary);">Exit</th>
+                                    <th style="text-align: right; padding: 6px 4px; color: var(--text-secondary);">P&L</th>
+                                    <th style="text-align: right; padding: 6px 4px; color: var(--text-secondary);">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${closedTrades.map(t => `
+                                    <tr style="border-bottom: 1px solid var(--border-color);">
+                                        <td style="padding: 8px 4px;">${t.asset}</td>
+                                        <td style="padding: 8px 4px;"><span class="${t.direction === 'SHORT' ? 'trade-short' : 'trade-long'}" style="font-size: 11px; padding: 2px 6px;">${t.direction}</span></td>
+                                        <td style="padding: 8px 4px; text-align: right;">$${t.entry}</td>
+                                        <td style="padding: 8px 4px; text-align: right;">$${t.exit}</td>
+                                        <td style="padding: 8px 4px; text-align: right;" class="${(t.pnl || 0) >= 0 ? 'positive' : 'negative'}">${(t.pnl || 0) >= 0 ? '+' : ''}$${(t.pnl || 0).toFixed(2)}</td>
+                                        <td style="padding: 8px 4px; text-align: right; font-size: 11px; color: var(--text-secondary);">${t.reason || '-'}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                } else {
+                    closedTradesEl.innerHTML = '<div style="color: var(--text-secondary); padding: 16px 0; text-align: center;">No closed trades yet</div>';
+                    document.getElementById('total-trades').textContent = '0';
+                    document.getElementById('win-rate').textContent = 'N/A';
+                    document.getElementById('total-pnl').textContent = '$0.00';
+                    document.getElementById('avg-win-loss').textContent = '-';
                 }
                 
                 // Update activity log
