@@ -89,7 +89,12 @@
                 <div class="card">
                     <div class="card-title">📈 Unrealized PnL</div>
                     <div id="pnl" class="card-value">$0.00</div>
-                    <div class="card-subtitle">Current session</div>
+                    <div class="card-subtitle">Open positions</div>
+                </div>
+                <div class="card" style="border: 2px solid var(--accent-green);">
+                    <div class="card-title">💵 All-Time P&L</div>
+                    <div id="all-time-pnl" class="card-value positive">$0.00</div>
+                    <div id="all-time-breakdown" class="card-subtitle">Realized + Unrealized</div>
                 </div>
             </div>
             
@@ -172,6 +177,16 @@
                 pnlEl.textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
                 pnlEl.className = 'card-value ' + (pnl >= 0 ? 'positive' : 'negative');
                 
+                // Calculate All-Time P&L (realized + unrealized)
+                const closedTrades = drift.closedPositions || [];
+                const realizedPnl = closedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+                const allTimePnl = realizedPnl + pnl;
+                const allTimePnlEl = document.getElementById('all-time-pnl');
+                allTimePnlEl.textContent = (allTimePnl >= 0 ? '+' : '') + '$' + allTimePnl.toFixed(2);
+                allTimePnlEl.className = 'card-value ' + (allTimePnl >= 0 ? 'positive' : 'negative');
+                document.getElementById('all-time-breakdown').textContent = 
+                    'Realized: ' + (realizedPnl >= 0 ? '+' : '') + '$' + realizedPnl.toFixed(2) + ' | Open: ' + (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
+                
                 // Update positions (supports array)
                 const positionCard = document.getElementById('position-card');
                 const positions = drift.positions || (drift.position ? [drift.position] : []);
@@ -222,8 +237,7 @@
                     ordersList.innerHTML = '<div style="color: var(--text-secondary); padding: 8px 0;">No open orders</div>';
                 }
                 
-                // Update closed trades and stats
-                const closedTrades = drift.closedPositions || [];
+                // Update closed trades and stats (closedTrades already defined above)
                 const closedTradesEl = document.getElementById('closed-trades');
                 
                 if (closedTrades.length > 0) {
