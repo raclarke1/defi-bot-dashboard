@@ -1,45 +1,116 @@
 {
-  "lastUpdate": "2026-02-01T19:00:00.000Z",
-  "version": "1.2",
-  "status": "trading",
+  "lastUpdate": "2026-02-01T19:31:00.000Z",
+  "version": "3.2",
+  "status": "TRADING",
+  "wallets": [
+    {
+      "name": "Drift Trading",
+      "chain": "Solana",
+      "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+      "balance": "165 USDC",
+      "balanceUsd": 165.11
+    },
+    {
+      "name": "Solana Main",
+      "chain": "Solana",
+      "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
+      "balance": "7.94 SOL",
+      "balanceUsd": 821.87
+    },
+    {
+      "name": "EVM Wallet",
+      "chain": "ETH/ARB/BASE",
+      "address": "0xD2F6EeE876999d3AF71053252aAD3F2271454CF1",
+      "balance": "0 ETH",
+      "balanceUsd": 0
+    },
+    {
+      "name": "Bitcoin",
+      "chain": "BTC",
+      "address": "bc1q6a8djq3s3h8tp6sy39l8v3vwlnuh6lm267nlx0",
+      "balance": "0 BTC",
+      "balanceUsd": 0
+    }
+  ],
   "drift": {
-    "status": "position_open",
-    "collateral": 165.11,
+    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+    "freeCollateral": 50.00,
+    "totalCollateral": 165.11,
     "equity": 162.22,
-    "unrealizedPnl": -2.89,
-    "leverage": 4.17,
-    "openPositions": 1
-  },
-  "currentTrade": {
-    "asset": "XRP-PERP",
-    "direction": "SHORT",
-    "size": 713,
-    "sizeUsd": 687.46,
-    "entry": 0.9615,
-    "mark": 0.9642,
-    "pnl": -1.88,
-    "pnlPercent": -0.27,
-    "stop": 1.01,
-    "stopCoinbase": 1.70,
-    "status": "open"
-  },
-  "stats": {
-    "totalTrades": 2,
-    "wins": 0,
-    "losses": 2
+    "leverage": 4.07,
+    "unrealizedPnl": 0.58,
+    "positions": [
+      {
+        "asset": "XRP-PERP",
+        "direction": "SHORT",
+        "size": 713,
+        "notional": 685,
+        "entry": 0.9615,
+        "current": 0.9607,
+        "pnl": 0.58,
+        "stopLoss": 1.01,
+        "takeProfit": null,
+        "type": "directional",
+        "notes": "Trailing stop starts at $1.45 Coinbase"
+      }
+    ],
+    "closedPositions": [
+      {
+        "asset": "BTC-PERP",
+        "direction": "SHORT",
+        "size": 0.0037,
+        "entry": 78415,
+        "exit": 78060,
+        "pnl": 1.32,
+        "closedAt": "2026-02-01",
+        "reason": "Closed to fund XRP short"
+      },
+      {
+        "asset": "SUI-PERP",
+        "direction": "SHORT",
+        "size": 87,
+        "entry": 1.1391,
+        "exit": 1.1248,
+        "pnl": 1.24,
+        "closedAt": "2026-02-01",
+        "reason": "Closed to fund XRP short"
+      },
+      {
+        "asset": "XRP-PERP (funding)",
+        "direction": "SHORT",
+        "size": 99,
+        "entry": 0.9765,
+        "exit": 0.97,
+        "pnl": 0.65,
+        "closedAt": "2026-02-01",
+        "reason": "Closed to free margin"
+      },
+      {
+        "asset": "SOL-PERP",
+        "direction": "LONG",
+        "size": 5.7,
+        "entry": 105,
+        "exit": 101,
+        "pnl": -22.80,
+        "closedAt": "2026-02-01",
+        "reason": "Stop-loss hit"
+      },
+      {
+        "asset": "XRP-PERP",
+        "direction": "SHORT",
+        "size": 2898,
+        "entry": 1.7855,
+        "exit": 1.74,
+        "pnl": 133.77,
+        "closedAt": "2026-01-30",
+        "reason": "Manual close"
+      }
+    ]
   },
   "activityLog": [
-    {
-      "time": "12:00 PM",
-      "message": "4hr review: XRP SHORT 713 @ $0.9615, PnL -$1.88"
-    },
-    {
-      "time": "11:22 AM",
-      "message": "⚠️ XRP SHORT entry blocked - insufficient collateral"
-    },
-    {
-      "time": "8:31 AM",
-      "message": "📈 Equity recovered to $182.39, PnL +$16.01"
-    }
+    {"time": "12:31 PM", "type": "update", "message": "XRP SHORT now in profit +$0.58"},
+    {"time": "11:42 AM", "type": "update", "message": "Wallet overview added"},
+    {"time": "11:35 AM", "type": "trade", "message": "XRP SHORT maxed: 713 units ($690) @ 4.23x"},
+    {"time": "11:27 AM", "type": "trade", "message": "OPENED: XRP-PERP SHORT - directional trade"}
   ]
 }
