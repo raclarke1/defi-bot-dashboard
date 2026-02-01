@@ -163,22 +163,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                ${positions.map(p => {
-                                    const dirClass = p.direction === 'SHORT' ? 'trade-short' : 'trade-long';
-                                    const pnlClass = (p.pnl || 0) >= 0 ? 'positive' : 'negative';
-                                    const pnlStr = (p.pnl || 0) >= 0 ? '+$' + (p.pnl || 0).toFixed(2) : '-$' + Math.abs(p.pnl || 0).toFixed(2);
-                                    const sl = p.stopLoss ? '$' + p.stopLoss : '-';
-                                    const tp = p.takeProfit ? '$' + p.takeProfit : '-';
-                                    return \`
+                                ${positions.map(p => `
                                         <tr style="border-bottom: 1px solid var(--border-color);">
-                                            <td style="padding: 10px 4px; font-weight: 600;">\${p.asset}</td>
-                                            <td style="padding: 10px 4px;"><span class="\${dirClass}">\${p.direction}</span></td>
-                                            <td style="padding: 10px 4px; text-align: right;">$\${(p.notional || 0).toLocaleString()}</td>
-                                            <td style="padding: 10px 4px; text-align: right;" class="\${pnlClass}">\${pnlStr}</td>
-                                            <td style="padding: 10px 4px; text-align: right; font-size: 12px; color: var(--text-secondary);">\${sl} / \${tp}</td>
+                                            <td style="padding: 10px 4px; font-weight: 600;">${p.asset}</td>
+                                            <td style="padding: 10px 4px;"><span class="${p.direction === 'SHORT' ? 'trade-short' : 'trade-long'}">${p.direction}</span></td>
+                                            <td style="padding: 10px 4px; text-align: right;">$${(p.notional || 0).toLocaleString()}</td>
+                                            <td style="padding: 10px 4px; text-align: right;" class="${(p.pnl || 0) >= 0 ? 'positive' : 'negative'}">${(p.pnl || 0) >= 0 ? '+' : ''}$${(p.pnl || 0).toFixed(2)}</td>
+                                            <td style="padding: 10px 4px; text-align: right; font-size: 12px; color: var(--text-secondary);">${p.stopLoss ? '$' + p.stopLoss : '-'} / ${p.takeProfit ? '$' + p.takeProfit : '-'}</td>
                                         </tr>
-                                    \`;
-                                }).join('')}
+                                    `).join('')}
                             </tbody>
                         </table>
                     `;
