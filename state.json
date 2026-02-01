@@ -1,40 +1,49 @@
 {
-  "lastUpdate": "2026-02-01T11:05:00.000Z",
-  "version": "1.2",
-  "status": "watching",
+  "lastUpdate": "2026-02-01T12:08:38.776Z",
+  "version": "2.0",
+  "status": "TRADING",
   "drift": {
-    "status": "no_position",
-    "collateral": 189.80,
-    "equity": 190.17,
-    "unrealizedPnl": 0,
-    "openPositions": 0
+    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+    "freeCollateral": 174.82,
+    "totalCollateral": 189.36,
+    "equity": 188.93,
+    "leverage": 1.53,
+    "unrealizedPnl": -0.44,
+    "position": {
+      "asset": "BTC-PERP",
+      "direction": "SHORT",
+      "size": 0.0037,
+      "notional": 0,
+      "currentPrice": 0,
+      "stopLoss": 80500,
+      "takeProfit": 74000,
+      "fundingRate": "+0%/hr",
+      "onChainStops": true
+    }
   },
-  "currentTrade": null,
-  "lastTrade": {
-    "id": 1,
-    "asset": "SOL-PERP",
-    "direction": "SHORT",
-    "entry": 103.60,
-    "exit": 106.70,
-    "stop": 106.70,
-    "target": 100.00,
-    "size": 50,
-    "leverage": 2,
-    "pnl": -1.50,
-    "pnlPercent": -3.0,
-    "openedAt": "2026-01-31T22:04:00.000Z",
-    "closedAt": "2026-02-01T10:00:00.000Z",
-    "status": "stopped_out",
-    "lesson": "Stop hit during overnight session. Entry was correct but SOL bounced before reaching target."
-  },
-  "stats": {
-    "totalTrades": 1,
-    "wins": 0,
-    "losses": 1,
-    "winRate": "0%",
-    "totalPnl": -1.50
+  "openOrders": [
+    {
+      "type": "STOP-LOSS",
+      "trigger": 80500,
+      "size": 0.0037,
+      "status": "ON-CHAIN"
+    },
+    {
+      "type": "TAKE-PROFIT",
+      "trigger": 74000,
+      "size": 0.0037,
+      "status": "ON-CHAIN"
+    }
+  ],
+  "marketPrices": {
+    "BTC": 0
   },
   "activityLog": [
+    {
+      "time": "5:08 AM",
+      "type": "sync",
+      "message": "Auto-sync: BTC $0, PnL $-0.44"
+    },
     {
       "time": "4:05 AM",
       "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
@@ -51,5 +60,12 @@
       "time": "12:00 AM",
       "message": "4hr review: HOLD - $1.71 from stop"
     }
-  ]
+  ],
+  "stats": {
+    "totalTrades": 1,
+    "wins": 0,
+    "losses": 1,
+    "winRate": "0%",
+    "totalPnl": -1.5
+  }
 }
