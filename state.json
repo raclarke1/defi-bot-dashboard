@@ -1,82 +1,92 @@
 {
-  "lastUpdate": "2026-02-01T13:02:00.000Z",
+  "lastUpdate": "2026-02-01T13:22:00.000Z",
   "version": "3.2",
   "status": "TRADING",
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 104.00,
-    "totalCollateral": 189.50,
-    "equity": 189.00,
-    "leverage": 5.8,
-    "unrealizedPnl": -0.50,
+    "freeCollateral": 103.00,
+    "totalCollateral": 188.00,
+    "equity": 193.00,
+    "leverage": 5.7,
+    "unrealizedPnl": 5.00,
     "positions": [
       {
-        "asset": "BTC-PERP",
-        "direction": "SHORT",
-        "size": 0.0037,
-        "notional": 290,
-        "entry": 78400,
-        "stopLoss": 80500,
-        "takeProfit": 74000,
-        "type": "directional"
+        "asset": "SOL-PERP",
+        "marketIndex": 0,
+        "direction": "LONG",
+        "size": 5.7,
+        "notional": 604,
+        "entry": 105.00,
+        "current": 105.93,
+        "stopLoss": 101.00,
+        "takeProfit": 115.00,
+        "type": "funding-arb",
+        "fundingAPR": "-63.6%",
+        "stopsSet": true
       },
       {
         "asset": "XRP-PERP",
+        "marketIndex": 14,
         "direction": "SHORT",
         "size": 102,
         "notional": 100,
         "entry": 0.98,
+        "current": 0.98,
         "stopLoss": 1.03,
         "takeProfit": 0.93,
         "type": "funding-arb",
-        "fundingAPR": "+55.8%"
-      },
-      {
-        "asset": "SOL-PERP",
-        "direction": "LONG",
-        "size": 5.7,
-        "notional": 600,
-        "entry": 105.00,
-        "stopLoss": 101.00,
-        "takeProfit": 115.00,
-        "type": "funding-arb",
-        "fundingAPR": "-63.6%"
+        "fundingAPR": "+55.8%",
+        "stopsSet": true
       },
       {
         "asset": "SUI-PERP",
+        "marketIndex": 6,
         "direction": "SHORT",
-        "size": 175,
-        "notional": 25,
+        "size": 717,
+        "notional": 100,
         "entry": 0.14,
-        "stopLoss": "MANUAL - order issue",
-        "takeProfit": "MANUAL - order issue",
+        "current": 0.14,
+        "stopLoss": 0.145,
+        "takeProfit": "PENDING",
         "type": "funding-arb",
-        "fundingAPR": "+40.9%"
+        "fundingAPR": "+40.9%",
+        "stopsSet": "partial"
+      },
+      {
+        "asset": "ARB-PERP",
+        "marketIndex": 9,
+        "direction": "SHORT",
+        "size": 87,
+        "notional": 99,
+        "entry": 1.14,
+        "current": 1.14,
+        "stopLoss": "MANUAL",
+        "takeProfit": "MANUAL",
+        "type": "funding-arb",
+        "fundingAPR": "TBD",
+        "stopsSet": false,
+        "note": "Accidental open on wrong market"
       }
     ]
   },
   "fundingRates": {
-    "lastCheck": "2026-02-01T13:00:00.000Z",
+    "lastCheck": "2026-02-01T13:20:00.000Z",
     "rates": [
       {"asset": "SOL-PERP", "apr": -63.6, "direction": "shorts pay longs", "status": "CAPTURING"},
       {"asset": "XRP-PERP", "apr": 55.8, "direction": "longs pay shorts", "status": "CAPTURING"},
-      {"asset": "SUI-PERP", "apr": 40.9, "direction": "longs pay shorts", "status": "CAPTURING"}
+      {"asset": "SUI-PERP", "apr": 40.9, "direction": "longs pay shorts", "status": "CAPTURING"},
+      {"asset": "ARB-PERP", "apr": "TBD", "status": "CAPTURING"}
     ]
   },
-  "openOrders": [
-    {"type": "STOP-LOSS", "asset": "BTC-PERP", "trigger": 80500, "status": "ON-CHAIN"},
-    {"type": "TAKE-PROFIT", "asset": "BTC-PERP", "trigger": 74000, "status": "ON-CHAIN"},
-    {"type": "STOP-LOSS", "asset": "XRP-PERP", "trigger": 1.03, "status": "ON-CHAIN"},
-    {"type": "TAKE-PROFIT", "asset": "XRP-PERP", "trigger": 0.93, "status": "ON-CHAIN"},
-    {"type": "STOP-LOSS", "asset": "SOL-PERP", "trigger": 101.00, "status": "ON-CHAIN"},
-    {"type": "TAKE-PROFIT", "asset": "SOL-PERP", "trigger": 115.00, "status": "ON-CHAIN"}
+  "issues": [
+    "SDK bug: 'transaction already processed' errors but trades execute",
+    "SUI-PERP missing take-profit order",
+    "ARB-PERP needs stops (accidental position)"
   ],
   "activityLog": [
-    {"time": "6:02 AM", "type": "funding-arb", "message": "OPENED: SUI-PERP SHORT 175 @ $0.14 for funding capture (+40.9% APR)"},
-    {"time": "5:57 AM", "type": "funding-arb", "message": "OPENED: SOL-PERP LONG $600 @ $105 for funding capture (-63.6% APR)"},
-    {"time": "5:42 AM", "type": "funding-arb", "message": "OPENED: XRP-PERP SHORT $100 @ $0.98 for funding capture (+55.8% APR)"},
-    {"time": "5:18 AM", "type": "sync", "message": "Dashboard rebuilt - now loads live data"},
-    {"time": "4:49 PM", "type": "trade", "message": "TRIPLED: BTC SHORT now $290 @ 1.54x"},
-    {"time": "3:41 PM", "type": "trade", "message": "OPENED: BTC-PERP SHORT $100 @ $78,095"}
+    {"time": "6:22 AM", "type": "debug", "message": "Verified positions: 4 active, ~$900 notional total"},
+    {"time": "6:02 AM", "type": "funding-arb", "message": "OPENED: SUI-PERP SHORT for funding (+40.9% APR)"},
+    {"time": "5:57 AM", "type": "funding-arb", "message": "OPENED: SOL-PERP LONG for funding (-63.6% APR)"},
+    {"time": "5:42 AM", "type": "funding-arb", "message": "OPENED: XRP-PERP SHORT for funding (+55.8% APR)"}
   ]
 }
