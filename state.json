@@ -1,92 +1,53 @@
 {
-  "lastUpdate": "2026-02-01T13:22:00.000Z",
-  "version": "3.2",
-  "status": "TRADING",
+  "lastUpdate": "2026-02-01T15:05:00.000Z",
+  "version": "1.2",
+  "status": "ALERT",
   "drift": {
-    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 103.00,
-    "totalCollateral": 188.00,
-    "equity": 193.00,
-    "leverage": 5.7,
-    "unrealizedPnl": 5.00,
-    "positions": [
-      {
-        "asset": "SOL-PERP",
-        "marketIndex": 0,
-        "direction": "LONG",
-        "size": 5.7,
-        "notional": 604,
-        "entry": 105.00,
-        "current": 105.93,
-        "stopLoss": 101.00,
-        "takeProfit": 115.00,
-        "type": "funding-arb",
-        "fundingAPR": "-63.6%",
-        "stopsSet": true
-      },
-      {
-        "asset": "XRP-PERP",
-        "marketIndex": 14,
-        "direction": "SHORT",
-        "size": 102,
-        "notional": 100,
-        "entry": 0.98,
-        "current": 0.98,
-        "stopLoss": 1.03,
-        "takeProfit": 0.93,
-        "type": "funding-arb",
-        "fundingAPR": "+55.8%",
-        "stopsSet": true
-      },
-      {
-        "asset": "SUI-PERP",
-        "marketIndex": 6,
-        "direction": "SHORT",
-        "size": 717,
-        "notional": 100,
-        "entry": 0.14,
-        "current": 0.14,
-        "stopLoss": 0.145,
-        "takeProfit": "PENDING",
-        "type": "funding-arb",
-        "fundingAPR": "+40.9%",
-        "stopsSet": "partial"
-      },
-      {
-        "asset": "ARB-PERP",
-        "marketIndex": 9,
-        "direction": "SHORT",
-        "size": 87,
-        "notional": 99,
-        "entry": 1.14,
-        "current": 1.14,
-        "stopLoss": "MANUAL",
-        "takeProfit": "MANUAL",
-        "type": "funding-arb",
-        "fundingAPR": "TBD",
-        "stopsSet": false,
-        "note": "Accidental open on wrong market"
-      }
-    ]
+    "status": "position_open_unknown",
+    "collateral": 177.17,
+    "equity": 169.22,
+    "unrealizedPnl": -7.95,
+    "leverage": 6.44,
+    "openPositions": 1,
+    "note": "SDK bug - cannot fetch position details. Check app.drift.trade"
   },
-  "fundingRates": {
-    "lastCheck": "2026-02-01T13:20:00.000Z",
-    "rates": [
-      {"asset": "SOL-PERP", "apr": -63.6, "direction": "shorts pay longs", "status": "CAPTURING"},
-      {"asset": "XRP-PERP", "apr": 55.8, "direction": "longs pay shorts", "status": "CAPTURING"},
-      {"asset": "SUI-PERP", "apr": 40.9, "direction": "longs pay shorts", "status": "CAPTURING"},
-      {"asset": "ARB-PERP", "apr": "TBD", "status": "CAPTURING"}
-    ]
+  "currentTrade": {
+    "id": "unknown",
+    "asset": "UNKNOWN",
+    "direction": "UNKNOWN",
+    "status": "open",
+    "note": "Position detected by leverage/PnL but SDK getPerpPositions broken"
   },
-  "issues": [
-    "SDK bug: 'transaction already processed' errors but trades execute",
-    "SUI-PERP missing take-profit order",
-    "ARB-PERP needs stops (accidental position)"
-  ],
+  "lastTrade": {
+    "id": 1,
+    "asset": "SOL-PERP",
+    "direction": "SHORT",
+    "entry": 103.60,
+    "exit": 106.70,
+    "pnl": -1.50,
+    "pnlPercent": -3.0,
+    "closedAt": "2026-02-01T10:00:00.000Z",
+    "status": "stopped_out"
+  },
+  "stats": {
+    "totalTrades": 1,
+    "wins": 0,
+    "losses": 1
+  },
   "activityLog": [
-    {"time": "6:22 AM", "type": "debug", "message": "Verified positions: 4 active, ~$900 notional total"},
-    {"time": "6:02 AM", "type": "funding-arb", "message": "OPENED: SUI-PERP SHORT for funding (+40.9% APR)"},
-    {"time": "5:57 AM", "type": "funding-arb", "message": "OPENED: SOL-PERP LONG for funding (-63.6% APR)"},
-    {"time": "5:42 AM", "type": "funding-arb", "message": "OPENED: XRP-PERP SHORT for funding (+55.8% APR)"}
+    {
+      "time": "8:05 AM",
+      "message": "🚨 UNKNOWN POSITION: Equity $169.22, 6.44x leverage, PnL -$7.95"
+    },
+    {
+      "time": "4:05 AM",
+      "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
+    }
+  ],
+  "pendingOrders": [
+    "BTC LONG @ $80,500 (above) or $74,000 (below)",
+    "XRP LONG @ $1.03 (above) or $0.93 (below)",
+    "SOL SHORT @ $101 (below) or $115 (above)",
+    "ARB LONG @ $0.14 (above)"
   ]
 }
