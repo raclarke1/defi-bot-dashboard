@@ -1,76 +1,35 @@
 {
-  "lastUpdate": "2026-02-01T12:15:01.711Z",
-  "version": "2.0",
+  "lastUpdate": "2026-02-01T12:18:00.000Z",
+  "version": "3.2",
   "status": "TRADING",
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 174.62,
-    "totalCollateral": 189.17,
-    "equity": 188.54,
-    "leverage": 1.54,
-    "unrealizedPnl": -0.63,
+    "freeCollateral": 175.07,
+    "totalCollateral": 189.60,
+    "equity": 189.39,
+    "leverage": 1.53,
+    "unrealizedPnl": -0.21,
     "position": {
       "asset": "BTC-PERP",
       "direction": "SHORT",
       "size": 0.0037,
-      "notional": 0,
-      "currentPrice": 0,
+      "notional": 290,
+      "currentPrice": 78455,
       "stopLoss": 80500,
       "takeProfit": 74000,
-      "fundingRate": "+0%/hr",
+      "fundingRate": "+3.66%/hr",
       "onChainStops": true
     }
   },
   "openOrders": [
-    {
-      "type": "STOP-LOSS",
-      "trigger": 80500,
-      "size": 0.0037,
-      "status": "ON-CHAIN"
-    },
-    {
-      "type": "TAKE-PROFIT",
-      "trigger": 74000,
-      "size": 0.0037,
-      "status": "ON-CHAIN"
-    }
+    {"type": "STOP-LOSS", "trigger": 80500, "size": 0.0037, "status": "ON-CHAIN"},
+    {"type": "TAKE-PROFIT", "trigger": 74000, "size": 0.0037, "status": "ON-CHAIN"}
   ],
-  "marketPrices": {
-    "BTC": 0
-  },
   "activityLog": [
-    {
-      "time": "5:15 AM",
-      "type": "sync",
-      "message": "Auto-sync: BTC $0, PnL $-0.63"
-    },
-    {
-      "time": "5:08 AM",
-      "type": "sync",
-      "message": "Auto-sync: BTC $0, PnL $-0.44"
-    },
-    {
-      "time": "4:05 AM",
-      "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
-    },
-    {
-      "time": "1:40 AM",
-      "message": "⚠️ SOL $105.73 - CLOSE to stop ($0.97)"
-    },
-    {
-      "time": "12:50 AM",
-      "message": "SOL $105.39 - approaching stop zone"
-    },
-    {
-      "time": "12:00 AM",
-      "message": "4hr review: HOLD - $1.71 from stop"
-    }
-  ],
-  "stats": {
-    "totalTrades": 1,
-    "wins": 0,
-    "losses": 1,
-    "winRate": "0%",
-    "totalPnl": -1.5
-  }
+    {"time": "5:18 AM", "type": "sync", "message": "Dashboard rebuilt - now loads live data from state.json"},
+    {"time": "5:13 AM", "type": "update", "message": "Strategy updated to v3.2 (BTC focus, 5% stops, trailing)"},
+    {"time": "5:06 AM", "type": "info", "message": "BTC at $78,455 - position flat, collecting funding"},
+    {"time": "4:49 PM", "type": "trade", "message": "TRIPLED position: BTC SHORT now $290 @ 1.54x"},
+    {"time": "3:41 PM", "type": "trade", "message": "OPENED: BTC-PERP SHORT $100 @ $78,095"}
+  ]
 }
