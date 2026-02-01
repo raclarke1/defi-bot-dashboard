@@ -1,53 +1,41 @@
 {
-  "lastUpdate": "2026-02-01T15:05:00.000Z",
+  "lastUpdate": "2026-02-01T15:31:00.000Z",
   "version": "1.2",
-  "status": "ALERT",
+  "status": "trading",
   "drift": {
-    "status": "position_open_unknown",
-    "collateral": 177.17,
-    "equity": 169.22,
-    "unrealizedPnl": -7.95,
-    "leverage": 6.44,
+    "status": "position_open",
+    "collateral": 166.38,
+    "equity": 182.39,
+    "unrealizedPnl": 16.01,
+    "leverage": 3.14,
     "openPositions": 1,
-    "note": "SDK bug - cannot fetch position details. Check app.drift.trade"
+    "note": "SOL LONG stopped at $101, remaining position(s) profitable"
   },
-  "currentTrade": {
-    "id": "unknown",
-    "asset": "UNKNOWN",
-    "direction": "UNKNOWN",
-    "status": "open",
-    "note": "Position detected by leverage/PnL but SDK getPerpPositions broken"
-  },
-  "lastTrade": {
-    "id": 1,
-    "asset": "SOL-PERP",
-    "direction": "SHORT",
-    "entry": 103.60,
-    "exit": 106.70,
-    "pnl": -1.50,
-    "pnlPercent": -3.0,
-    "closedAt": "2026-02-01T10:00:00.000Z",
-    "status": "stopped_out"
-  },
+  "recentEvents": [
+    "8:31 AM - SOL broke $101, LONG likely stopped out",
+    "8:31 AM - Equity recovered to $182.39 (+$13 from earlier)",
+    "8:05 AM - Alerted about unknown position, equity $169"
+  ],
+  "likelyOpenPositions": [
+    "XRP SHORT @ $0.98 (profitable as XRP dropped)"
+  ],
   "stats": {
-    "totalTrades": 1,
+    "totalTrades": 2,
     "wins": 0,
-    "losses": 1
+    "losses": 2
   },
   "activityLog": [
     {
-      "time": "8:05 AM",
-      "message": "🚨 UNKNOWN POSITION: Equity $169.22, 6.44x leverage, PnL -$7.95"
+      "time": "8:31 AM",
+      "message": "📈 Equity recovered to $182.39, PnL +$16.01"
+    },
+    {
+      "time": "8:05 AM", 
+      "message": "🚨 Position alert: Equity $169, leverage 6.44x"
     },
     {
       "time": "4:05 AM",
       "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
     }
-  ],
-  "pendingOrders": [
-    "BTC LONG @ $80,500 (above) or $74,000 (below)",
-    "XRP LONG @ $1.03 (above) or $0.93 (below)",
-    "SOL SHORT @ $101 (below) or $115 (above)",
-    "ARB LONG @ $0.14 (above)"
   ]
 }
