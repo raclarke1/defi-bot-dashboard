@@ -1,23 +1,23 @@
 {
-  "lastUpdate": "2026-02-01T16:01:00.000Z",
+  "lastUpdate": "2026-02-01T18:27:00.000Z",
   "version": "3.2",
   "status": "TRADING",
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 113.72,
-    "totalCollateral": 166.38,
-    "equity": 182.68,
-    "leverage": 3.13,
-    "unrealizedPnl": 16.30,
+    "freeCollateral": 49.53,
+    "totalCollateral": 163.75,
+    "equity": 163.67,
+    "leverage": 5.04,
+    "unrealizedPnl": -0.07,
     "positions": [
       {
         "asset": "BTC-PERP",
         "direction": "SHORT",
         "size": 0.0037,
-        "notional": 285,
+        "notional": 289,
         "entry": 78415,
-        "current": 76934,
-        "pnl": 5.48,
+        "current": 78060,
+        "pnl": 1.32,
         "stopLoss": 80500,
         "takeProfit": 74000,
         "type": "directional"
@@ -25,41 +25,50 @@
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
-        "size": 102,
-        "notional": 96,
-        "entry": 0.9765,
-        "current": 0.9435,
-        "pnl": 3.37,
-        "stopLoss": 1.03,
-        "takeProfit": 0.93,
-        "type": "funding-arb"
+        "size": 466,
+        "notional": 450,
+        "entry": 0.9605,
+        "current": 0.9653,
+        "pnl": -2.23,
+        "stopLoss": 1.01,
+        "takeProfit": null,
+        "type": "directional",
+        "notes": "Large directional short - 5% trailing stop"
       },
       {
         "asset": "ARB-PERP",
         "direction": "SHORT",
         "size": 87,
-        "notional": 95,
+        "notional": 98,
         "entry": 1.1391,
-        "current": 1.0887,
-        "pnl": 4.39,
+        "current": 1.1227,
+        "pnl": 1.42,
         "stopLoss": null,
-        "takeProfit": null,
-        "type": "funding-arb"
-      },
-      {
-        "asset": "SUI-PERP",
-        "direction": "SHORT",
-        "size": 717,
-        "notional": 97,
-        "entry": 0.1391,
-        "current": 0.1348,
-        "pnl": 3.05,
-        "stopLoss": 0.145,
         "takeProfit": null,
         "type": "funding-arb"
       }
     ],
     "closedPositions": [
+      {
+        "asset": "XRP-PERP (funding)",
+        "direction": "SHORT",
+        "size": 99,
+        "entry": 0.9765,
+        "exit": 0.97,
+        "pnl": 0.65,
+        "closedAt": "2026-02-01",
+        "reason": "Closed to free margin for directional short"
+      },
+      {
+        "asset": "SUI-PERP",
+        "direction": "SHORT",
+        "size": 717,
+        "entry": 0.1391,
+        "exit": 0.136,
+        "pnl": 2.22,
+        "closedAt": "2026-02-01",
+        "reason": "Closed to free margin"
+      },
       {
         "asset": "SOL-PERP",
         "direction": "LONG",
@@ -143,10 +152,11 @@
     ]
   },
   "activityLog": [
+    {"time": "11:27 AM", "type": "trade", "message": "OPENED: XRP-PERP SHORT $450 @ 5x - directional trade with 5% trailing stop"},
+    {"time": "11:23 AM", "type": "close", "message": "Closed funding arb positions to free margin"},
+    {"time": "10:30 AM", "type": "update", "message": "Added All-Time P&L card to dashboard"},
     {"time": "9:01 AM", "type": "update", "message": "Added complete trade history to dashboard"},
     {"time": "8:38 AM", "type": "fix", "message": "SDK bug fixed: getPerpPositions → getActivePerpPositions"},
-    {"time": "8:30 AM", "type": "stop-loss", "message": "SOL-PERP LONG stopped out at $101 (-$22.80)"},
-    {"time": "6:02 AM", "type": "funding-arb", "message": "OPENED: SUI-PERP SHORT for funding (+40.9% APR)"},
-    {"time": "5:57 AM", "type": "funding-arb", "message": "OPENED: SOL-PERP LONG for funding (-63.6% APR)"}
+    {"time": "8:30 AM", "type": "stop-loss", "message": "SOL-PERP LONG stopped out at $101 (-$22.80)"}
   ]
 }
