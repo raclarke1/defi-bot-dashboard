@@ -1,52 +1,55 @@
 {
-  "lastUpdate": "2026-02-01T07:00:00.000Z",
+  "lastUpdate": "2026-02-01T11:05:00.000Z",
   "version": "1.2",
-  "status": "trading",
+  "status": "watching",
   "drift": {
-    "status": "position_open",
-    "collateral": 188.74,
-    "equity": 187.66,
-    "unrealizedPnl": -6.95,
-    "openPositions": 1
+    "status": "no_position",
+    "collateral": 189.80,
+    "equity": 190.17,
+    "unrealizedPnl": 0,
+    "openPositions": 0
   },
-  "currentTrade": {
+  "currentTrade": null,
+  "lastTrade": {
     "id": 1,
     "asset": "SOL-PERP",
     "direction": "SHORT",
     "entry": 103.60,
-    "currentPrice": 104.99,
+    "exit": 106.70,
     "stop": 106.70,
     "target": 100.00,
     "size": 50,
     "leverage": 2,
+    "pnl": -1.50,
+    "pnlPercent": -3.0,
     "openedAt": "2026-01-31T22:04:00.000Z",
-    "status": "open"
+    "closedAt": "2026-02-01T10:00:00.000Z",
+    "status": "stopped_out",
+    "lesson": "Stop hit during overnight session. Entry was correct but SOL bounced before reaching target."
   },
   "stats": {
     "totalTrades": 1,
     "wins": 0,
-    "losses": 0
+    "losses": 1,
+    "winRate": "0%",
+    "totalPnl": -1.50
   },
   "activityLog": [
     {
+      "time": "4:05 AM",
+      "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
+    },
+    {
+      "time": "1:40 AM",
+      "message": "⚠️ SOL $105.73 - CLOSE to stop ($0.97)"
+    },
+    {
+      "time": "12:50 AM",
+      "message": "SOL $105.39 - approaching stop zone"
+    },
+    {
       "time": "12:00 AM",
       "message": "4hr review: HOLD - $1.71 from stop"
-    },
-    {
-      "time": "9:20 PM",
-      "message": "SOL $105.32 - $1.38 from stop"
-    },
-    {
-      "time": "9:30 PM",
-      "message": "SOL $104.88 - approaching stop zone"
-    },
-    {
-      "time": "9:15 PM",
-      "message": "Dashboard sync test"
-    },
-    {
-      "time": "8:35 PM",
-      "message": "Dashboard fixed"
     }
   ]
 }
