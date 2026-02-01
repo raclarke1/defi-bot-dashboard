@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-01T18:40:00.000Z",
+  "lastUpdate": "2026-02-01T18:42:00.000Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -18,24 +18,17 @@
       "balanceUsd": 821.87
     },
     {
-      "name": "EVM (All Chains)",
+      "name": "EVM Wallet",
       "chain": "ETH/ARB/BASE",
       "address": "0xD2F6EeE876999d3AF71053252aAD3F2271454CF1",
-      "balance": "TBD",
+      "balance": "0 ETH",
       "balanceUsd": 0
     },
     {
-      "name": "Bitcoin (SegWit)",
-      "chain": "Bitcoin",
+      "name": "Bitcoin",
+      "chain": "BTC",
       "address": "bc1q6a8djq3s3h8tp6sy39l8v3vwlnuh6lm267nlx0",
-      "balance": "TBD",
-      "balanceUsd": 0
-    },
-    {
-      "name": "Coinbase",
-      "chain": "Exchange",
-      "address": "API Connected",
-      "balance": "TBD",
+      "balance": "0 BTC",
       "balanceUsd": 0
     }
   ],
@@ -175,11 +168,11 @@
     ]
   },
   "activityLog": [
+    {"time": "11:42 AM", "type": "update", "message": "Wallet overview - on-chain only, removed Coinbase"},
     {"time": "11:40 AM", "type": "update", "message": "Added wallet overview to dashboard"},
     {"time": "11:35 AM", "type": "trade", "message": "ADDED to XRP SHORT: Now 713 units ($690) @ 4.23x"},
     {"time": "11:33 AM", "type": "close", "message": "Closed SUI-PERP (+$1.24) - fixed market index bug"},
     {"time": "11:30 AM", "type": "close", "message": "Closed BTC-PERP (+$1.32) to fund XRP short"},
-    {"time": "11:27 AM", "type": "trade", "message": "OPENED: XRP-PERP SHORT $450 @ 5x - directional trade"},
-    {"time": "11:23 AM", "type": "close", "message": "Closed funding arb positions to free margin"}
+    {"time": "11:27 AM", "type": "trade", "message": "OPENED: XRP-PERP SHORT $450 @ 5x - directional trade"}
   ]
 }
