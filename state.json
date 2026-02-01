@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-01T04:30:00.000Z",
+  "lastUpdate": "2026-02-01T07:00:00.000Z",
   "version": "1.2",
   "status": "trading",
   "drift": {
     "status": "position_open",
     "collateral": 188.74,
     "equity": 187.66,
-    "unrealizedPnl": -6.4,
+    "unrealizedPnl": -6.95,
     "openPositions": 1
   },
   "currentTrade": {
@@ -14,7 +14,7 @@
     "asset": "SOL-PERP",
     "direction": "SHORT",
     "entry": 103.60,
-    "currentPrice": 104.88,
+    "currentPrice": 104.99,
     "stop": 106.70,
     "target": 100.00,
     "size": 50,
@@ -29,6 +29,14 @@
   },
   "activityLog": [
     {
+      "time": "12:00 AM",
+      "message": "4hr review: HOLD - $1.71 from stop"
+    },
+    {
+      "time": "9:20 PM",
+      "message": "SOL $105.32 - $1.38 from stop"
+    },
+    {
       "time": "9:30 PM",
       "message": "SOL $104.88 - approaching stop zone"
     },
@@ -39,14 +47,6 @@
     {
       "time": "8:35 PM",
       "message": "Dashboard fixed"
-    },
-    {
-      "time": "8:00 PM",
-      "message": "4hr review: HOLD"
-    },
-    {
-      "time": "6:20 PM",
-      "message": "Briefly profitable +$0.16"
     }
   ]
 }
