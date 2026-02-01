@@ -1,41 +1,91 @@
 {
-  "lastUpdate": "2026-02-01T15:31:00.000Z",
-  "version": "1.2",
-  "status": "trading",
+  "lastUpdate": "2026-02-01T15:38:00.000Z",
+  "version": "3.2",
+  "status": "TRADING",
   "drift": {
-    "status": "position_open",
-    "collateral": 166.38,
-    "equity": 182.39,
-    "unrealizedPnl": 16.01,
-    "leverage": 3.14,
-    "openPositions": 1,
-    "note": "SOL LONG stopped at $101, remaining position(s) profitable"
-  },
-  "recentEvents": [
-    "8:31 AM - SOL broke $101, LONG likely stopped out",
-    "8:31 AM - Equity recovered to $182.39 (+$13 from earlier)",
-    "8:05 AM - Alerted about unknown position, equity $169"
-  ],
-  "likelyOpenPositions": [
-    "XRP SHORT @ $0.98 (profitable as XRP dropped)"
-  ],
-  "stats": {
-    "totalTrades": 2,
-    "wins": 0,
-    "losses": 2
+    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+    "freeCollateral": 113.72,
+    "totalCollateral": 166.38,
+    "equity": 182.68,
+    "leverage": 3.13,
+    "unrealizedPnl": 16.30,
+    "positions": [
+      {
+        "asset": "BTC-PERP",
+        "marketIndex": 1,
+        "direction": "SHORT",
+        "size": 0.0037,
+        "notional": 285,
+        "entry": 78415,
+        "current": 76934,
+        "pnl": 5.48,
+        "pnlPct": 1.89,
+        "stopLoss": 80500,
+        "takeProfit": 74000,
+        "type": "directional"
+      },
+      {
+        "asset": "XRP-PERP",
+        "marketIndex": 14,
+        "direction": "SHORT",
+        "size": 102,
+        "notional": 96,
+        "entry": 0.9765,
+        "current": 0.9435,
+        "pnl": 3.37,
+        "pnlPct": 3.38,
+        "stopLoss": 1.03,
+        "takeProfit": 0.93,
+        "type": "funding-arb"
+      },
+      {
+        "asset": "ARB-PERP",
+        "marketIndex": 9,
+        "direction": "SHORT",
+        "size": 87,
+        "notional": 95,
+        "entry": 1.1391,
+        "current": 1.0887,
+        "pnl": 4.39,
+        "pnlPct": 4.43,
+        "stopLoss": null,
+        "takeProfit": null,
+        "type": "funding-arb",
+        "note": "Accidental - needs stops"
+      },
+      {
+        "asset": "SUI-PERP",
+        "marketIndex": 6,
+        "direction": "SHORT",
+        "size": 717,
+        "notional": 97,
+        "entry": 0.1391,
+        "current": 0.1348,
+        "pnl": 3.05,
+        "pnlPct": 3.06,
+        "stopLoss": 0.145,
+        "takeProfit": null,
+        "type": "funding-arb"
+      }
+    ],
+    "closedPositions": [
+      {
+        "asset": "SOL-PERP",
+        "direction": "LONG",
+        "size": 5.7,
+        "entry": 105,
+        "exit": 101,
+        "pnl": -22.80,
+        "closedAt": "2026-02-01T15:30:00.000Z",
+        "reason": "Stop-loss hit"
+      }
+    ]
   },
   "activityLog": [
-    {
-      "time": "8:31 AM",
-      "message": "📈 Equity recovered to $182.39, PnL +$16.01"
-    },
-    {
-      "time": "8:05 AM", 
-      "message": "🚨 Position alert: Equity $169, leverage 6.44x"
-    },
-    {
-      "time": "4:05 AM",
-      "message": "🛑 SOL SHORT stopped out @ $106.70 (-$1.50)"
-    }
+    {"time": "8:38 AM", "type": "fix", "message": "SDK bug fixed: getPerpPositions → getActivePerpPositions"},
+    {"time": "8:30 AM", "type": "stop-loss", "message": "SOL-PERP LONG stopped out at $101 (-$22.80)"},
+    {"time": "6:02 AM", "type": "funding-arb", "message": "OPENED: SUI-PERP SHORT for funding (+40.9% APR)"},
+    {"time": "5:57 AM", "type": "funding-arb", "message": "OPENED: SOL-PERP LONG for funding (-63.6% APR)"},
+    {"time": "5:42 AM", "type": "funding-arb", "message": "OPENED: XRP-PERP SHORT for funding (+55.8% APR)"}
   ]
 }
