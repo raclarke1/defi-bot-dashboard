@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-02-01T12:08:38.776Z",
+  "lastUpdate": "2026-02-01T12:15:01.711Z",
   "version": "2.0",
   "status": "TRADING",
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 174.82,
-    "totalCollateral": 189.36,
-    "equity": 188.93,
-    "leverage": 1.53,
-    "unrealizedPnl": -0.44,
+    "freeCollateral": 174.62,
+    "totalCollateral": 189.17,
+    "equity": 188.54,
+    "leverage": 1.54,
+    "unrealizedPnl": -0.63,
     "position": {
       "asset": "BTC-PERP",
       "direction": "SHORT",
@@ -39,6 +39,11 @@
     "BTC": 0
   },
   "activityLog": [
+    {
+      "time": "5:15 AM",
+      "type": "sync",
+      "message": "Auto-sync: BTC $0, PnL $-0.63"
+    },
     {
       "time": "5:08 AM",
       "type": "sync",
