@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-02T03:40:27.616Z",
+  "lastUpdate": "2026-02-02T03:45:45.000Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -34,20 +34,20 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 13.01,
-    "totalCollateral": 152.56,
-    "equity": 210.11,
-    "leverage": 3.32,
-    "unrealizedPnl": 57.55,
+    "freeCollateral": 12.84,
+    "totalCollateral": 152.55,
+    "equity": 209.27,
+    "leverage": 3.34,
+    "unrealizedPnl": 56.71,
     "positions": [
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
         "size": 768,
-        "notional": 697.64,
+        "notional": 698.12,
         "entry": 0.9592,
-        "current": 0.9084,
-        "pnl": 39,
+        "current": 0.909,
+        "pnl": 38.52,
         "stopLoss": 1.01,
         "takeProfit": null,
         "type": "directional",
@@ -108,6 +108,16 @@
     ]
   },
   "activityLog": [
+    {
+      "time": "8:45 PM",
+      "type": "funding",
+      "message": "XRP funding +57.9% APR - collecting from longs"
+    },
+    {
+      "time": "8:45 PM",
+      "type": "update",
+      "message": "XRP SHORT +$38.52 (5.23%) - stops at $1.01/$1.03"
+    },
     {
       "time": "12:31 PM",
       "type": "update",
