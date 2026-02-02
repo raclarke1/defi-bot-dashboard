@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-02T18:40:27.649Z",
+  "lastUpdate": "2026-02-02T18:55:14.749Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -36,9 +36,9 @@
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
     "freeCollateral": 142.86,
     "totalCollateral": 150.4,
-    "equity": 151.18,
+    "equity": 151.32,
     "leverage": 0.99,
-    "unrealizedPnl": 0.78,
+    "unrealizedPnl": 0.92,
     "positions": [
       {
         "asset": "SOL-PERP",
