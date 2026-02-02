@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-02T22:45:00.000Z",
+  "lastUpdate": "2026-02-02T16:22:22.662Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -8,7 +8,7 @@
       "chain": "Solana",
       "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
       "balance": "150 USDC",
-      "balanceUsd": 150.40
+      "balanceUsd": 150.4
     },
     {
       "name": "Solana Main",
@@ -34,11 +34,11 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 142.81,
-    "totalCollateral": 150.40,
-    "equity": 152.20,
+    "freeCollateral": 142.82,
+    "totalCollateral": 150.4,
+    "equity": 152.04,
     "leverage": 0.99,
-    "unrealizedPnl": 1.80,
+    "unrealizedPnl": 1.64,
     "positions": [
       {
         "asset": "SOL-PERP",
@@ -47,8 +47,8 @@
         "notional": 150.55,
         "entry": 104.01,
         "current": 105.12,
-        "pnl": 1.80,
-        "stopLoss": 98.80,
+        "pnl": 1.8,
+        "stopLoss": 98.8,
         "takeProfit": null,
         "type": "directional",
         "notes": "SOL LONG with stop at $98.80"
@@ -97,30 +97,6 @@
       }
     ]
   },
-  "pendingOrders": [
-    {
-      "asset": "BTC-PERP",
-      "type": "triggerMarket",
-      "direction": "LONG",
-      "trigger": 80500,
-      "condition": "above"
-    },
-    {
-      "asset": "BTC-PERP",
-      "type": "triggerMarket",
-      "direction": "LONG",
-      "trigger": 74000,
-      "condition": "below"
-    },
-    {
-      "asset": "SOL-PERP",
-      "type": "triggerMarket",
-      "direction": "SHORT",
-      "trigger": 98.80,
-      "condition": "below",
-      "notes": "Stop loss for SOL LONG"
-    }
-  ],
   "activityLog": [
     {
       "time": "10:45 PM",
