@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-02T16:10:20.499Z",
+  "lastUpdate": "2026-02-02T22:45:00.000Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -7,15 +7,15 @@
       "name": "Drift Trading",
       "chain": "Solana",
       "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "balance": "169 USDC",
-      "balanceUsd": 168.68
+      "balance": "150 USDC",
+      "balanceUsd": 150.40
     },
     {
       "name": "Solana Main",
       "chain": "Solana",
       "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
       "balance": "7.94 SOL",
-      "balanceUsd": 821.87
+      "balanceUsd": 834.65
     },
     {
       "name": "EVM Wallet",
@@ -34,27 +34,37 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 142.84,
-    "totalCollateral": 150.4,
-    "equity": 151.66,
+    "freeCollateral": 142.81,
+    "totalCollateral": 150.40,
+    "equity": 152.20,
     "leverage": 0.99,
-    "unrealizedPnl": 1.26,
+    "unrealizedPnl": 1.80,
     "positions": [
+      {
+        "asset": "SOL-PERP",
+        "direction": "LONG",
+        "size": 1.43,
+        "notional": 150.55,
+        "entry": 104.01,
+        "current": 105.12,
+        "pnl": 1.80,
+        "stopLoss": 98.80,
+        "takeProfit": null,
+        "type": "directional",
+        "notes": "SOL LONG with stop at $98.80"
+      }
+    ],
+    "closedPositions": [
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
         "size": 418,
-        "notional": 412.37,
         "entry": 0.9531,
-        "current": 0.9865,
-        "pnl": -13.97,
-        "stopLoss": 0.99,
-        "takeProfit": null,
-        "type": "funding_arb",
-        "notes": "Funding arb +58.6% APR - ready to close if directional setup appears"
-      }
-    ],
-    "closedPositions": [
+        "exit": null,
+        "pnl": null,
+        "closedAt": "2026-02-02",
+        "reason": "Position closed - replaced with SOL LONG"
+      },
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
@@ -87,21 +97,40 @@
       }
     ]
   },
+  "pendingOrders": [
+    {
+      "asset": "BTC-PERP",
+      "type": "triggerMarket",
+      "direction": "LONG",
+      "trigger": 80500,
+      "condition": "above"
+    },
+    {
+      "asset": "BTC-PERP",
+      "type": "triggerMarket",
+      "direction": "LONG",
+      "trigger": 74000,
+      "condition": "below"
+    },
+    {
+      "asset": "SOL-PERP",
+      "type": "triggerMarket",
+      "direction": "SHORT",
+      "trigger": 98.80,
+      "condition": "below",
+      "notes": "Stop loss for SOL LONG"
+    }
+  ],
   "activityLog": [
+    {
+      "time": "10:45 PM",
+      "type": "sync",
+      "message": "Dashboard synced - found SOL-PERP LONG (was showing stale XRP-PERP SHORT)"
+    },
     {
       "time": "5:45 AM",
       "type": "trade",
       "message": "OPENED: XRP-PERP SHORT 418 units ($399) @ $0.9531 - funding arb"
-    },
-    {
-      "time": "5:42 AM",
-      "type": "funding",
-      "message": "XRP funding +58.6% APR - executing arb"
-    },
-    {
-      "time": "8:45 PM",
-      "type": "update",
-      "message": "XRP SHORT +$38.52 (5.23%) - stops at $1.01/$1.03"
     }
   ]
 }
