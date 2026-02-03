@@ -1,112 +1,67 @@
 {
-  "lastUpdate": "2026-02-03T16:00:53.356Z",
+  "lastUpdate": "2026-02-03T16:05:00.000Z",
   "version": "3.2",
-  "status": "TRADING",
+  "status": "POSITION_OPEN",
   "wallets": [
     {
       "name": "Drift Trading",
       "chain": "Solana",
       "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "balance": "150 USDC",
-      "balanceUsd": 150.4
+      "balance": "744 USD",
+      "balanceUsd": 744.23
     },
     {
       "name": "Solana Main",
       "chain": "Solana",
       "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
-      "balance": "7.94 SOL",
-      "balanceUsd": 834.65
-    },
-    {
-      "name": "EVM Wallet",
-      "chain": "ETH/ARB/BASE",
-      "address": "0xD2F6EeE876999d3AF71053252aAD3F2271454CF1",
-      "balance": "0 ETH",
-      "balanceUsd": 0
-    },
-    {
-      "name": "Bitcoin",
-      "chain": "BTC",
-      "address": "bc1q6a8djq3s3h8tp6sy39l8v3vwlnuh6lm267nlx0",
-      "balance": "0 BTC",
-      "balanceUsd": 0
+      "balance": "0.14 SOL",
+      "balanceUsd": 14
     }
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 718.96,
-    "totalCollateral": 759.12,
-    "equity": 758.11,
-    "leverage": 0.22,
-    "unrealizedPnl": -1,
+    "freeCollateral": 93.20,
+    "totalCollateral": 751.57,
+    "equity": 744.23,
+    "leverage": 3.64,
+    "unrealizedPnl": -7.33,
     "positions": [
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
-        "size": 207,
-        "notional": 199.98,
-        "entry": 0.9612,
-        "current": 0.9661,
-        "pnl": -1.01,
-        "stopLoss": null,
+        "size": 3420,
+        "notional": 3291.76,
+        "entry": 0.9608,
+        "current": 0.9625,
+        "pnl": -5.82,
+        "stopLoss": 1.03,
         "takeProfit": null,
-        "type": "directional",
-        "notes": null
+        "type": "funding_arb",
+        "notes": "Funding arb +55% APR - 3.64x leverage"
       }
     ],
-    "closedPositions": [
-      {
-        "asset": "XRP-PERP",
-        "direction": "SHORT",
-        "size": 418,
-        "entry": 0.9531,
-        "exit": null,
-        "pnl": null,
-        "closedAt": "2026-02-02",
-        "reason": "Position closed - replaced with SOL LONG"
-      },
-      {
-        "asset": "XRP-PERP",
-        "direction": "SHORT",
-        "size": 768,
-        "entry": 0.9592,
-        "exit": 0.954,
-        "pnl": 3.96,
-        "closedAt": "2026-02-02",
-        "reason": "Closed previous position"
-      },
-      {
-        "asset": "BTC-PERP",
-        "direction": "SHORT",
-        "size": 0.0037,
-        "entry": 78415,
-        "exit": 78060,
-        "pnl": 1.32,
-        "closedAt": "2026-02-01",
-        "reason": "Closed to fund XRP short"
-      },
-      {
-        "asset": "SUI-PERP",
-        "direction": "SHORT",
-        "size": 87,
-        "entry": 1.1391,
-        "exit": 1.1248,
-        "pnl": 1.24,
-        "closedAt": "2026-02-01",
-        "reason": "Closed to fund XRP short"
-      }
-    ]
+    "closedPositions": []
   },
   "activityLog": [
     {
-      "time": "10:45 PM",
-      "type": "sync",
-      "message": "Dashboard synced - found SOL-PERP LONG (was showing stale XRP-PERP SHORT)"
+      "time": "9:05 AM",
+      "type": "trade",
+      "message": "XRP SHORT scaled to 3,420 units ($3,292) @ 3.64x"
     },
     {
-      "time": "5:45 AM",
+      "time": "9:01 AM",
       "type": "trade",
-      "message": "OPENED: XRP-PERP SHORT 418 units ($399) @ $0.9531 - funding arb"
+      "message": "XRP SHORT scaled up per Ryan - targeting 4x leverage"
+    },
+    {
+      "time": "8:59 AM",
+      "type": "deposit",
+      "message": "Deposited 7.5 SOL to Drift (+$750 equity)"
+    },
+    {
+      "time": "8:17 AM",
+      "type": "update",
+      "message": "Momentum bot disabled - focusing on DeFi bot only"
     }
   ]
 }
