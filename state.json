@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-03T16:30:19.869Z",
+  "lastUpdate": "2026-02-03T16:41:43.532Z",
   "version": "3.2",
   "status": "TRADING",
   "wallets": [
@@ -20,20 +20,20 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 100.68,
-    "totalCollateral": 749.05,
-    "equity": 791.75,
-    "leverage": 3.44,
-    "unrealizedPnl": 42.7,
+    "freeCollateral": 102.39,
+    "totalCollateral": 753.56,
+    "equity": 794.75,
+    "leverage": 3.43,
+    "unrealizedPnl": 41.19,
     "positions": [
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
         "size": 3420,
-        "notional": 3245.58,
+        "notional": 3243.67,
         "entry": 0.9608,
-        "current": 0.949,
-        "pnl": 40.36,
+        "current": 0.9484,
+        "pnl": 42.28,
         "stopLoss": 1.03,
         "takeProfit": null,
         "type": "funding_arb",
