@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T15:54:00.388Z",
+  "lastUpdate": "2026-02-04T16:00:31.863Z",
   "version": "3.2",
   "status": "IDLE",
   "wallets": [
@@ -20,9 +20,9 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 755.5,
-    "totalCollateral": 755.56,
-    "equity": 755.56,
+    "freeCollateral": 757.45,
+    "totalCollateral": 758.03,
+    "equity": 758.03,
     "leverage": 0,
     "unrealizedPnl": 0,
     "positions": [],
