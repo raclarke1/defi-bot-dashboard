@@ -1,7 +1,7 @@
 {
-  "lastUpdate": "2026-02-04T21:11:27.552Z",
+  "lastUpdate": "2026-02-04T21:41:03.987Z",
   "version": "3.2",
-  "status": "TRADING",
+  "status": "IDLE",
   "wallets": [
     {
       "name": "Drift Trading",
@@ -20,11 +20,11 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 607.06,
-    "totalCollateral": 755.58,
-    "equity": 763.74,
-    "leverage": 1.32,
-    "unrealizedPnl": 8.15,
+    "freeCollateral": 762.27,
+    "totalCollateral": 762.77,
+    "equity": 762.77,
+    "leverage": 0,
+    "unrealizedPnl": 0,
     "positions": [
       {
         "asset": "XRP-PERP",
