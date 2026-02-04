@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T10:50:30.451Z",
+  "lastUpdate": "2026-02-04T11:00:30.000Z",
   "version": "3.2",
   "status": "IDLE",
   "wallets": [
@@ -7,8 +7,8 @@
       "name": "Drift Trading",
       "chain": "Solana",
       "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "balance": "744 USD",
-      "balanceUsd": 744.23
+      "balance": "783 USD",
+      "balanceUsd": 783.54
     },
     {
       "name": "Solana Main",
@@ -20,48 +20,46 @@
   ],
   "drift": {
     "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 782.96,
-    "totalCollateral": 783.02,
-    "equity": 783.02,
+    "freeCollateral": 783.43,
+    "totalCollateral": 783.54,
+    "equity": 783.54,
     "leverage": 0,
     "unrealizedPnl": 0,
-    "positions": [
+    "positions": [],
+    "closedPositions": [
       {
         "asset": "XRP-PERP",
         "direction": "SHORT",
         "size": 3420,
-        "notional": 3159.68,
         "entry": 0.9608,
-        "current": 0.9239,
-        "pnl": 126.26,
-        "stopLoss": 1.03,
-        "takeProfit": null,
+        "exit": "~0.92",
+        "pnl": "+$126 (estimated)",
         "type": "funding_arb",
-        "notes": "Funding arb +55% APR - 3.64x leverage"
+        "closedAt": "2026-02-04",
+        "notes": "Position closed - funding arb +55% APR"
       }
-    ],
-    "closedPositions": []
+    ]
   },
   "activityLog": [
     {
-      "time": "9:05 AM",
+      "time": "4:00 AM",
+      "type": "update",
+      "message": "XRP SHORT position CLOSED - no open positions"
+    },
+    {
+      "time": "9:05 AM (Feb 3)",
       "type": "trade",
       "message": "XRP SHORT scaled to 3,420 units ($3,292) @ 3.64x"
     },
     {
-      "time": "9:01 AM",
+      "time": "9:01 AM (Feb 3)",
       "type": "trade",
       "message": "XRP SHORT scaled up per Ryan - targeting 4x leverage"
     },
     {
-      "time": "8:59 AM",
+      "time": "8:59 AM (Feb 3)",
       "type": "deposit",
       "message": "Deposited 7.5 SOL to Drift (+$750 equity)"
-    },
-    {
-      "time": "8:17 AM",
-      "type": "update",
-      "message": "Momentum bot disabled - focusing on DeFi bot only"
     }
   ]
 }
