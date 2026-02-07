@@ -1,22 +1,22 @@
 {
-  "lastUpdate": "2026-02-07T11:43:00Z",
+  "lastUpdate": "2026-02-07T18:00:00Z",
   "account": {
-    "equity": 718.72,
-    "freeCollateral": 705.97,
-    "leverage": 0.30
+    "equity": 743.56,
+    "freeCollateral": 743.49,
+    "leverage": 0.00
   },
-  "positions": [
-    {
-      "market": "SOL-PERP",
-      "direction": "LONG",
-      "size": 2.95,
-      "notional": 249.80,
-      "entryPrice": 84.59,
-      "markPrice": 84.68,
-      "unrealizedPnL": 0.17,
-      "reason": "Funding arb: -42.3% APR (shorts pay longs)"
-    }
-  ],
+  "positions": [],
+  "lastTrade": {
+    "market": "SOL-PERP",
+    "direction": "LONG",
+    "entry": 84.59,
+    "exit": 88.00,
+    "size": 2.95,
+    "pnl": 23.43,
+    "strategy": "funding_arb",
+    "result": "WIN",
+    "closedAt": "2026-02-07T18:00:00Z"
+  },
   "strategy": "Funding Rate Arbitrage v2.0",
-  "note": "Half-size position, 4% stop target. Collecting negative funding."
+  "note": "Position closed in profit. Collecting funding + price gain."
 }
