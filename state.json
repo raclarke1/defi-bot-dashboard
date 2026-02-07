@@ -1,118 +1,22 @@
 {
-  "lastUpdate": "2026-02-07T01:30:40.158Z",
-  "version": "3.2",
-  "status": "IDLE",
-  "wallets": [
+  "lastUpdate": "2026-02-07T11:43:00Z",
+  "account": {
+    "equity": 718.72,
+    "freeCollateral": 705.97,
+    "leverage": 0.30
+  },
+  "positions": [
     {
-      "name": "Drift Trading",
-      "chain": "Solana",
-      "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "balance": "783 USD",
-      "balanceUsd": 783.54
-    },
-    {
-      "name": "Solana Main",
-      "chain": "Solana",
-      "address": "5AagrC2RKecXif3AQxa9bktuHJgvvMtbG5Y6rCghb39Y",
-      "balance": "0.14 SOL",
-      "balanceUsd": 14
+      "market": "SOL-PERP",
+      "direction": "LONG",
+      "size": 2.95,
+      "notional": 249.80,
+      "entryPrice": 84.59,
+      "markPrice": 84.68,
+      "unrealizedPnL": 0.17,
+      "reason": "Funding arb: -42.3% APR (shorts pay longs)"
     }
   ],
-  "drift": {
-    "address": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "freeCollateral": 728.18,
-    "totalCollateral": 728.5,
-    "equity": 728.5,
-    "leverage": 0,
-    "unrealizedPnl": 0,
-    "positions": [
-      {
-        "asset": "XRP-PERP",
-        "direction": "SHORT",
-        "size": 334,
-        "notional": 297.43,
-        "entry": 0.8918,
-        "current": 0.8905,
-        "pnl": 0.43,
-        "stopLoss": null,
-        "takeProfit": null,
-        "type": "directional",
-        "notes": null
-      },
-      {
-        "asset": "DOGE-PERP",
-        "direction": "SHORT",
-        "size": 2866,
-        "notional": 297.55,
-        "entry": 0.1044,
-        "current": 0.1038,
-        "pnl": 1.77,
-        "stopLoss": null,
-        "takeProfit": null,
-        "type": "directional",
-        "notes": null
-      },
-      {
-        "asset": "JUP-PERP",
-        "direction": "SHORT",
-        "size": 1558,
-        "notional": 295.23,
-        "entry": 0.1923,
-        "current": 0.1895,
-        "pnl": 4.38,
-        "stopLoss": null,
-        "takeProfit": null,
-        "type": "directional",
-        "notes": null
-      },
-      {
-        "asset": "APT-PERP",
-        "direction": "SHORT",
-        "size": 242.8,
-        "notional": 297.27,
-        "entry": 1.233,
-        "current": 1.2243,
-        "pnl": 2.11,
-        "stopLoss": null,
-        "takeProfit": null,
-        "type": "directional",
-        "notes": null
-      }
-    ],
-    "closedPositions": [
-      {
-        "asset": "XRP-PERP",
-        "direction": "SHORT",
-        "size": 3420,
-        "entry": 0.9608,
-        "exit": "~0.92",
-        "pnl": "+$126 (estimated)",
-        "type": "funding_arb",
-        "closedAt": "2026-02-04",
-        "notes": "Position closed - funding arb +55% APR"
-      }
-    ]
-  },
-  "activityLog": [
-    {
-      "time": "4:00 AM",
-      "type": "update",
-      "message": "XRP SHORT position CLOSED - no open positions"
-    },
-    {
-      "time": "9:05 AM (Feb 3)",
-      "type": "trade",
-      "message": "XRP SHORT scaled to 3,420 units ($3,292) @ 3.64x"
-    },
-    {
-      "time": "9:01 AM (Feb 3)",
-      "type": "trade",
-      "message": "XRP SHORT scaled up per Ryan - targeting 4x leverage"
-    },
-    {
-      "time": "8:59 AM (Feb 3)",
-      "type": "deposit",
-      "message": "Deposited 7.5 SOL to Drift (+$750 equity)"
-    }
-  ]
+  "strategy": "Funding Rate Arbitrage v2.0",
+  "note": "Half-size position, 4% stop target. Collecting negative funding."
 }
