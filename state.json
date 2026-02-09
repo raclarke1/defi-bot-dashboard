@@ -1,9 +1,9 @@
 {
-  "lastUpdate": "2026-02-09T04:57:00Z",
+  "lastUpdate": "2026-02-09T23:08:00Z",
   "account": {
-    "equity": 733.83,
-    "freeCollateral": 659.44,
-    "leverage": 0.58
+    "equity": 727.75,
+    "freeCollateral": 700.18,
+    "leverage": 0.29
   },
   "positions": [
     {
@@ -11,35 +11,25 @@
       "direction": "SHORT",
       "entry": 0.9806,
       "size": 254,
-      "notional": 249.23,
+      "notional": 246.76,
       "stopLoss": 1.02,
       "strategy": "funding_arb",
       "fundingAPR": 35.3,
       "openedAt": "2026-02-09T04:56:00Z"
-    },
-    {
-      "market": "XRP-PERP",
-      "direction": "SHORT",
-      "entry": 0.8249,
-      "size": 302,
-      "notional": 249.27,
-      "stopLoss": 0.858,
-      "strategy": "funding_arb",
-      "fundingAPR": 35.2,
-      "openedAt": "2026-02-09T04:56:00Z"
     }
   ],
   "lastTrade": {
-    "market": "SOL-PERP",
-    "direction": "LONG",
-    "entry": 84.59,
-    "exit": 88.00,
-    "size": 2.95,
-    "pnl": 23.43,
+    "market": "XRP-PERP",
+    "direction": "SHORT",
+    "entry": 0.8249,
+    "exit": 0.858,
+    "size": 302,
+    "pnl": -8.78,
     "strategy": "funding_arb",
-    "result": "WIN",
-    "closedAt": "2026-02-07T18:00:00Z"
+    "result": "LOSS",
+    "closedAt": "2026-02-09T23:08:00Z",
+    "note": "Stopped out at 4% stop. XRP spiked against short position."
   },
   "strategy": "Funding Rate Arbitrage v2.0",
-  "note": "Two funding arb positions opened. Threshold lowered to 35% per Ryan."
+  "note": "XRP stopped out. SUI position still open and profitable."
 }
