@@ -1,9 +1,9 @@
 {
-  "lastUpdate": "2026-02-09T23:08:00Z",
+  "lastUpdate": "2026-02-10T21:01:00Z",
   "account": {
-    "equity": 727.75,
-    "freeCollateral": 700.18,
-    "leverage": 0.29
+    "equity": 711.15,
+    "freeCollateral": 648.96,
+    "leverage": 0.43
   },
   "positions": [
     {
@@ -11,11 +11,22 @@
       "direction": "SHORT",
       "entry": 0.9806,
       "size": 254,
-      "notional": 246.76,
+      "notional": 235.10,
       "stopLoss": 1.02,
       "strategy": "funding_arb",
       "fundingAPR": 35.3,
       "openedAt": "2026-02-09T04:56:00Z"
+    },
+    {
+      "market": "XRP-PERP",
+      "direction": "LONG",
+      "entry": 0.8140,
+      "size": 154,
+      "notional": 124.86,
+      "stopLoss": 0.7814,
+      "strategy": "funding_arb",
+      "fundingAPR": -77.7,
+      "openedAt": "2026-02-10T21:01:00Z"
     }
   ],
   "lastTrade": {
@@ -31,5 +42,5 @@
     "note": "Stopped out at 4% stop. XRP spiked against short position."
   },
   "strategy": "Funding Rate Arbitrage v2.0",
-  "note": "XRP stopped out. SUI position still open and profitable."
+  "note": "Opened XRP LONG for funding arb. SUI SHORT still open."
 }
