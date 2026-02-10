@@ -1,46 +1,36 @@
 {
-  "lastUpdate": "2026-02-10T21:01:00Z",
+  "lastUpdate": "2026-02-10T21:30:00Z",
   "account": {
-    "equity": 711.15,
-    "freeCollateral": 648.96,
-    "leverage": 0.43
+    "equity": 705.21,
+    "freeCollateral": 682.56,
+    "leverage": 0.15
   },
   "positions": [
-    {
-      "market": "SUI-PERP",
-      "direction": "SHORT",
-      "entry": 0.9806,
-      "size": 254,
-      "notional": 235.10,
-      "stopLoss": 1.02,
-      "strategy": "funding_arb",
-      "fundingAPR": 35.3,
-      "openedAt": "2026-02-09T04:56:00Z"
-    },
     {
       "market": "XRP-PERP",
       "direction": "LONG",
       "entry": 0.8140,
       "size": 154,
-      "notional": 124.86,
+      "notional": 123.49,
       "stopLoss": 0.7814,
+      "stopPlaced": true,
       "strategy": "funding_arb",
-      "fundingAPR": -77.7,
+      "fundingAPR": -78.5,
       "openedAt": "2026-02-10T21:01:00Z"
     }
   ],
   "lastTrade": {
-    "market": "XRP-PERP",
+    "market": "SUI-PERP",
     "direction": "SHORT",
-    "entry": 0.8249,
-    "exit": 0.858,
-    "size": 302,
-    "pnl": -8.78,
+    "entry": 0.9806,
+    "exit": 0.9238,
+    "size": 254,
+    "pnl": 14.42,
     "strategy": "funding_arb",
-    "result": "LOSS",
-    "closedAt": "2026-02-09T23:08:00Z",
-    "note": "Stopped out at 4% stop. XRP spiked against short position."
+    "result": "WIN",
+    "closedAt": "2026-02-10T21:30:00Z",
+    "note": "Closed early - funding rate reversed from +35% to -1.3%. Thesis broken. Took profit."
   },
   "strategy": "Funding Rate Arbitrage v2.0",
-  "note": "Opened XRP LONG for funding arb. SUI SHORT still open."
+  "note": "SUI SHORT closed +$14.42 (funding reversed). XRP LONG still open with stop at $0.7814."
 }
